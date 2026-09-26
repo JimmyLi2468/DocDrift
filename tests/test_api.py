@@ -61,3 +61,11 @@ def test_every_governance_condition_has_a_label(pipeline):
     _, bundle = pipeline.ask("What EOL trip class should softstarter S1 use?")
     ids = {k.condition for c in bundle.candidate_changes for k in c.verdict.conditions}
     assert ids and ids <= set(CONDITION_LABELS)
+
+
+def test_partial_type_code_names_the_closest_asset_and_one_check(pipeline):
+    a, _ = pipeline.ask("MS132-10 keeps tripping at 10A")
+    assert not a.answered
+    lines = a.clarification_needed.splitlines()
+    assert "P5" in lines[0] and "MS132-10T" in lines[0]
+    assert [l for l in lines if l.startswith("- ")] == [l for l in lines if l.startswith("- Equipment identified")]

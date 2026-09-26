@@ -90,9 +90,9 @@ def ask_view(req: AskRequest) -> dict:
 
 @app.get("/api/documents/{doc_id}/pages/{page}.png")
 def page_image(doc_id: str, page: int, version: str | None = None,
-               q: list[str] = Query(default=[])) -> Response:
+               q: list[str] = Query(default=[]), question: str = "") -> Response:
     try:
-        png = render_page(doc_id, page, version, tuple(q[:8]))
+        png = render_page(doc_id, page, version, tuple(q[:8]), question=question[:300])
     except PreviewUnavailable as exc:
         raise HTTPException(404, str(exc)) from exc
     return Response(png, media_type="image/png")

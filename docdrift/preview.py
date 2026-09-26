@@ -43,14 +43,89 @@ def pdf_path(doc_id: str, version: str | None = None):
     return p, False
 
 
-def _fragments(quote: str, words: int = 7) -> list[str]:
+def _fragments(quote: str, words: int) -> list[str]:
     toks = quote.split()
-    return [" ".join(toks[i:i + words]) for i in range(0, max(1, len(toks) - 2), words)]
+    if len(toks) <= words:
+        return [" ".join(toks)] if toks else []
+    return [" ".join(toks[i:i + words]) for i in range(0, len(toks) - words + 1, max(1, words - 1))]
+
+
+_KEY = re.compile(r"\b\d+(?:[.,]\d+)?\s?(?:N·?m|Nm|lb\.?in|mm²?|A|V|kW|°C|x Uc|%)(?![\w])|\b[0-9A-F]{4}\b")
+
+
+_STOP = set("""a an the of to in on at for and or is are be it this that with from by as what which how
+does do did should must can could would will need needs needed keep keeps kept show shows check checked
+manual manuals specify specified give gives say says tell drive drives softstarter contactor breaker
+machine equipment please after before during when why where there their its about any some""".split())
+
+
+def focus_terms(question: str) -> list[str]:
+    """Terms from the operator's question worth marking on a page: fault codes, type
+    codes, and two-word phrases ("tightening torque", "main terminals")."""
+    words = re.findall(r"[A-Za-z0-9][A-Za-z0-9.\-]*", question)
+    codes = [w for w in words if re.fullmatch(r"[0-9A-F]{4}|[A-Z]{2,}\d[\w.\-]*", w) and not re.fullmatch(r"[A-Z]\d", w)]
+    content = [w.lower() for w in words if w.lower() not in _STOP and len(w) > 2 and not re.fullmatch(r"[A-Z]\d+", w)]
+    pairs = [f"{a} {b}" for a, b in zip(content, content[1:])]
+    return list(dict.fromkeys(codes + pairs))
+
+
+def _row_rects(pg, terms: list[str]) -> list:
+    """Table rows that name a question term and carry a value: the term's line plus
+    every span on the same row (same baseline), so "Tightening torque | 1.5 Nm | 2.5 Nm"
+    is marked as one row and the header or empty sub-heading rows are not."""
+    import pymupdf
+    lines = []
+    for block in pg.get_text("dict")["blocks"]:
+        for line in block.get("lines", []):
+            text = "".join(s["text"] for s in line["spans"]).strip()
+            if text:
+                lines.append((pymupdf.Rect(line["bbox"]), text))
+    out = []
+    for rect, text in lines:
+        low = text.lower()
+        if not any(t.lower() in low for t in terms):
+            continue
+        row = [r for r, _ in lines if min(r.y1, rect.y1) - max(r.y0, rect.y0) > 0.6 * rect.height]
+        row_text = " ".join(x for r, x in lines if r in row)
+        if re.search(r"\d", row_text.replace(text, "", 1)) or re.search(r"\b[0-9A-F]{4}\b", text):
+            out.extend(row)
+    return out
+
+
+def _norm(s: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", s.lower()).strip()
+
+
+def _prose_lines(pg, quote: str, min_words: int = 6) -> list:
+    """Page lines of running text that the quote contains verbatim. Matching whole
+    lines survives the line breaks and bullets that defeat phrase search; the length
+    floor keeps short table cells ("10 mm", "Rigid") from lighting up."""
+    import pymupdf
+    q = " " + _norm(quote) + " "
+    out = []
+    for block in pg.get_text("dict")["blocks"]:
+        for line in block.get("lines", []):
+            text = _norm("".join(s["text"] for s in line["spans"]))
+            if len(text.split()) >= min_words and f" {text} " in q:
+                out.append(pymupdf.Rect(line["bbox"]))
+    return out
+
+
+def _highlight_rects(pg, quote: str, terms: list[str] | None = None) -> list:
+    """Find a quoted passage on the page. PDF text is laid out in lines and table
+    cells, so a sentence rarely matches in one piece: try overlapping runs of six
+    words, then three, then the quote's values and codes ("2.5 Nm", "5091")."""
+    quote = re.sub(r"\s+", " ", quote).strip(" .")
+    rows = _row_rects(pg, [t for t in terms if t.lower() in quote.lower()]) if terms else []
+    rects = rows + _prose_lines(pg, quote)
+    if rects:
+        return rects
+    return [r for key in dict.fromkeys(_KEY.findall(quote)) for r in pg.search_for(key)][:6]
 
 
 @functools.lru_cache(maxsize=64)
 def render_page(doc_id: str, page: int, version: str | None = None,
-                quotes: tuple[str, ...] = (), dpi: int = 110) -> bytes:
+                quotes: tuple[str, ...] = (), dpi: int = 110, question: str = "") -> bytes:
     import pymupdf
 
     path, synthetic = pdf_path(doc_id, version)
@@ -60,12 +135,16 @@ def render_page(doc_id: str, page: int, version: str | None = None,
         if not 0 <= index < doc.page_count:
             raise PreviewUnavailable(f"{doc_id} has no page {page}")
         pg = doc[index]
+        terms = focus_terms(question) if question else None
+        seen = set()
         for quote in quotes:
-            for frag in _fragments(re.sub(r"\s+", " ", quote)):
-                for rect in pg.search_for(frag):
-                    annot = pg.add_highlight_annot(rect)
-                    annot.set_colors(stroke=(1.0, 0.85, 0.2))
-                    annot.update()
+            for rect in _highlight_rects(pg, quote, terms):
+                if tuple(rect) in seen:
+                    continue
+                seen.add(tuple(rect))
+                annot = pg.add_highlight_annot(rect)
+                annot.set_colors(stroke=(1.0, 0.85, 0.2))
+                annot.update()
         return pg.get_pixmap(dpi=dpi).tobytes("png")
     finally:
         doc.close()

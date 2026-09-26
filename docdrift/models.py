@@ -115,6 +115,8 @@ class Communication(BaseModel):
     #: Thread key. Every message about one proposed change shares it, which is how
     #: later approvals, rejections and cancellations are tied to the original.
     change_ref: str | None = None
+    #: One plain-language sentence describing the change, for the operator page.
+    summary: str | None = None
     decision_state: DecisionState = DecisionState.DISCUSSION
     approver_person_id: str | None = None
     decision_date: date | None = None

@@ -26,9 +26,35 @@ def _person(store, pid):
     return {"id": p.person_id, "name": p.name, "role": p.role} if p else None
 
 
+CHANNEL_LABELS = {"teams_chat": "Teams chat", "email": "Email",
+                  "formal_change_notice": "Formal change notice",
+                  "engineering_bulletin": "Engineering bulletin",
+                  "meeting_minutes": "Meeting minutes"}
+
+
+def _log(c, store) -> list[dict]:
+    """The approval conversation for this change: every message and notice on the same
+    change reference, oldest first, as the operator page's text log."""
+    comms = (store.communications_for_change(c.communication.change_ref)
+             if c.communication.change_ref else [c.communication])
+    out = []
+    for m in comms:
+        who = store.get_person(m.author_person_id)
+        out.append({"comm_id": m.comm_id, "date": str(m.date),
+                    "channel": CHANNEL_LABELS.get(m.channel.value, m.channel.value),
+                    "author": f"{who.name} ({who.role})" if who else m.author_person_id,
+                    "subject": m.subject, "body": m.body,
+                    "is_this_record": m.comm_id == c.communication.comm_id})
+    return out
+
+
 def _change(c, store) -> dict:
     comm = c.communication
     return {
+        "channel_label": CHANNEL_LABELS.get(comm.channel.value, comm.channel.value),
+        "summary": comm.summary,
+        "reflected_in_current_document": (c.incorporation.incorporated if c.incorporation else None),
+        "log": _log(c, store),
         "comm_id": comm.comm_id, "change_ref": comm.change_ref, "channel": comm.channel.value,
         "date": str(comm.date), "subject": comm.subject, "body": comm.body,
         "author": _person(store, comm.author_person_id),

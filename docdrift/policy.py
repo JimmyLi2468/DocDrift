@@ -12,6 +12,19 @@ from .models import (ContentProvenance, DocumentationStatus, EvidenceBundle, Gat
 from .validate import validate_answer
 
 
+GATE_LABELS = {
+    "G1_EQUIPMENT_IDENTIFIED": "Equipment identified",
+    "G2_APPLICABLE_CURRENT_DOCUMENT": "Applicable current document",
+    "G3_EVERY_STEP_CITED": "Every step cited",
+    "G4_CITATIONS_RESOLVE": "Citations found in the source",
+    "G5_DRIFT_DISCLOSED": "Approved change disclosed",
+    "G6_NO_UNAUTHORISED_APPROVAL_CLAIM": "No unauthorised approval presented as approved",
+    "G7_EVIDENCE_FULLY_DISCLOSED": "All examined records disclosed",
+    "G8_PROVENANCE_LABELLED": "Synthetic content labelled",
+    "G9_READ_ONLY": "Read-only",
+}
+
+
 def run_gates(bundle: EvidenceBundle, answer: OperatorAnswer, store, th: Thresholds) -> list[GateResult]:
     gates: list[GateResult] = []
     conf = bundle.equipment.confidence
@@ -93,7 +106,12 @@ def apply_gates(answer: OperatorAnswer, gates: list[GateResult]) -> OperatorAnsw
         answer.answered = False
         answer.guidance = []
         answer.status = DocumentationStatus.INSUFFICIENT_EVIDENCE
-        answer.clarification_needed = answer.clarification_needed or (
-            "DocDrift withheld the answer because a verification gate failed: "
-            + "; ".join(f"{g.gate} ({g.detail})" for g in blocking))
+        # When the equipment is not confirmed, every later gate fails as a consequence;
+        # listing them would bury the one thing the operator can fix.
+        root = [g for g in blocking if g.gate == "G1_EQUIPMENT_IDENTIFIED"]
+        blocking = root or blocking
+        lines = ["DocDrift withheld the answer because these checks failed:"]
+        lines += [f"- {GATE_LABELS.get(g.gate, g.gate)}: {g.detail}" for g in blocking]
+        answer.clarification_needed = "\n".join(
+            ([answer.clarification_needed] if answer.clarification_needed else []) + lines)
     return answer

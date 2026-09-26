@@ -79,13 +79,14 @@ function firstPage(doc) {
   const cited = Object.keys(doc.cited_pages || {}).map(Number);
   return cited[0] || doc.change_pages[0] || doc.compare_pages[0] || 1;
 }
-function previewFor(doc, page, tab) {
-  return { docId: doc.doc_id, page, version: null, tab: tab || "page",
+function previewFor(doc, page) {
+  return { docId: doc.doc_id, page, version: null,
            quotes: (doc.cited_pages || {})[String(page)] || [] };
 }
 
 // ------------------------------------------------------------------ render
 function render() {
+  const scrollY = window.scrollY;
   renderMeta();
   const route = location.hash.match(/^#\/evidence\/([\w-]+)/);
   if (route) return renderEvidencePage(route[1]);
@@ -106,11 +107,26 @@ function render() {
     </section>
     <section class="panel history">${renderHistory()}</section>
     <section class="panel docs"><h2>Relevant documents</h2>${t ? renderDocs(t) : '<div class="empty">Documents for the selected question appear here.</div>'}</section>
-    <section class="panel preview">${t ? renderAnswer(t) + renderPreview(t) : '<h2>Document preview</h2><div class="empty">Ask a question or pick a demo question.</div>'}</section>
+    <section class="panel preview">${t ? renderAnswer(t) + `<div class="preview-pane">${renderPreview(t)}</div>` : '<h2>Document preview</h2><div class="empty">Ask a question or pick a demo question.</div>'}</section>
     <aside class="right">${t ? renderRight(t) : renderRightEmpty()}</aside>
   </div>`;
   bind();
   if (t && state.preview) loadPreviewBody(t);
+  window.scrollTo(0, scrollY);          // a re-render must never move the page
+}
+
+function rerenderPreview() {
+  // Page navigation replaces only the preview body: the rest of the page, and the
+  // operator's scroll position, stay exactly where they were.
+  const t = activeTurn(), box = document.querySelector(".preview-pane");
+  if (!t || !box) return render();
+  const y = window.scrollY;
+  box.innerHTML = renderPreview(t);
+  bindPreview(t);
+  loadPreviewBody(t);
+  document.querySelectorAll(".doc").forEach((el) =>
+    el.classList.toggle("active", el.dataset.doc === state.preview.docId));
+  window.scrollTo(0, y);
 }
 
 function demoQuestions() {
@@ -179,73 +195,62 @@ function renderAnswer(t) {
 function renderPreview(t) {
   const p = state.preview;
   if (!p) return '<div class="empty">No document to preview.</div>';
-  const doc = t.view.documents.find((d) => d.doc_id === p.docId);
-  const canCompare = doc && doc.compare_pages.includes(p.page);
-  const tabs = [["page", "Page"], ["text", "Extracted text"]];
-  if (doc && doc.compare_pages.length) tabs.push(["compare", "Compare with previous revision"]);
-  return `<div class="tabs">${tabs.map(([k, l]) =>
-      `<button data-tab="${k}" class="${p.tab === k ? "active" : ""}">${l}</button>`).join("")}
-    <span class="spacer"></span>
+  return `<div class="tabs"><span class="tab-title">Page preview</span><span class="spacer"></span>
     <span class="nav">${esc(p.docId)} p.<b>${p.page}</b>
-      <button data-page="-1">&lsaquo;</button><button data-page="1">&rsaquo;</button>
+      <button data-page="-1" aria-label="Previous page">&lsaquo;</button><button data-page="1" aria-label="Next page">&rsaquo;</button>
       <a href="/api/documents/${encodeURIComponent(p.docId)}/pdf#page=${p.page}" target="_blank" rel="noopener">Open PDF</a></span></div>
-    <div class="viewer" id="viewer">${p.tab === "compare" && !canCompare
-      ? `<p class="note">The previous revision covers p.${doc.compare_pages.join(", ")} of this document.</p>` : '<p class="note">Loading...</p>'}</div>`;
+    <div class="viewer" id="viewer"><p class="note">Loading page...</p></div>`;
 }
 
-async function loadPreviewBody(t) {
-  const p = state.preview, box = $("#viewer");
+function loadPreviewBody(t) {
+  const p = state.preview, box = document.getElementById("viewer");
   if (!box) return;
   const base = `/api/documents/${encodeURIComponent(p.docId)}/pages/${p.page}`;
-  try {
-    if (p.tab === "page") {
-      const qs = p.quotes.map((q) => "q=" + encodeURIComponent(q.slice(0, 160))).join("&");
-      box.innerHTML = `<p class="note">${p.quotes.length ? "Cited passages are highlighted." : "Page as published."}</p>
-        <img alt="${esc(p.docId)} page ${p.page}" src="${base}.png${qs ? "?" + qs : ""}">`;
-      box.querySelector("img").onerror = () => { box.innerHTML = '<p class="note">Page image unavailable - the PDF is not in the local library.</p>'; };
-    } else if (p.tab === "text") {
-      const r = await api(`${base}/text`);
-      box.innerHTML = `<p class="note">Rev ${esc(r.version)} &middot; ${esc(r.provenance)}</p><pre>${esc(r.text || "(no text layer on this page)")}</pre>`;
-    } else {
-      const doc = t.view.documents.find((d) => d.doc_id === p.docId);
-      if (!doc.compare_pages.includes(p.page)) return;
-      const r = await api(`${base}/compare`);
-      const diff = r.diff.map((d) => d.op === "same" ? esc(d.text)
-        : d.op === "removed" ? `<del>${esc(d.text)}</del>` : `<ins>${esc(d.text)}</ins>`).join(" ");
-      box.innerHTML = `<div class="diffhead"><b>Rev ${esc(r.previous_version)}</b> (${esc(r.previous_effective)},
-        <span class="tag syn">synthetic reconstruction - not an ABB publication</span>) &rarr; <b>rev ${esc(r.current_version)}</b> (ABB publication)
-        <ul>${r.revision_history.map(([rev, d, what]) => `<li>Rev ${esc(rev)} ${esc(d)}: ${esc(what)}</li>`).join("")}</ul></div>
-        <div class="diff">${diff || "(current text not indexed)"}</div>
-        <p class="note"><del>struck</del> = only in the previous revision; <ins>green</ins> = added in the current revision.</p>`;
-    }
-  } catch (e) {
-    box.innerHTML = `<p class="note">${esc(e.message)}</p>`;
-  }
+  const qs = p.quotes.map((q) => "q=" + encodeURIComponent(q.slice(0, 200))).join("&");
+  const img = new Image();
+  img.alt = `${p.docId} page ${p.page}`;
+  img.onload = () => {
+    box.innerHTML = `<p class="note">${p.quotes.length ? "Passages cited in the answer are highlighted." : "Page as published."}</p>`;
+    box.appendChild(img);
+  };
+  img.onerror = () => { box.innerHTML = '<p class="note">Page image unavailable - the PDF is not in the local library.</p>'; };
+  const qq = (qs ? qs + "&" : "") + "question=" + encodeURIComponent(t.question);
+  img.src = `${base}.png?${qq}`;
+}
+
+function reflectedText(v) {
+  return v === true ? "Yes - reflected in the current document"
+       : v === false ? "No - not yet reflected in the current document" : "Not checked";
+}
+function approverText(c) {
+  return c.approver ? `${esc(c.approver.name)} (${esc(c.approver.role)})` : "&mdash;";
 }
 
 function renderRight(t) {
   const v = t.view;
   const eff = v.changes.filter((c) => c.effective && c.topical_scope === "answer_relevant");
-  const refused = v.changes.filter((c) => !c.effective);
-  const approval = v.approval_evidence.length
-    ? `<ul class="evidence-list">${v.approval_evidence.map((e) => `<li>${esc(e)}</li>`).join("")}</ul>`
+  const approval = eff.length ? eff.map((c) => `
+      <dl class="kv"><dt>Change notice</dt><dd><b>${esc(c.comm_id)}</b></dd>
+        <dt>Channel</dt><dd>${esc(c.channel_label)}</dd>
+        <dt>Decision</dt><dd>${esc(c.decision_state)}${c.decision_date ? " on " + esc(c.decision_date) : ""}</dd>
+        <dt>Approver</dt><dd>${approverText(c)}</dd>
+        <dt>Incorporation</dt><dd>${reflectedText(c.reflected_in_current_document)}</dd></dl>
+      <h3 class="subhead">Change description</h3><p class="desc">${esc(c.summary)}</p>`).join("<hr>")
     : `<p class="muted">No approved change alters this guidance.</p>`;
-  const esc_ = v.escalation
+  const escalation = v.escalation
     ? `<p>${esc(v.escalation)}</p>` : `<p class="muted">No escalation needed: the documentation is current for this question.</p>`;
   const done = state.escalated[t.id];
   return `
-    <section class="panel ${eff.length ? "alert" : ""}"><h2>Approval evidence</h2><div class="body">
-      ${v.pending_change ? `<p><b>${esc(v.pending_change.split(":")[0])}</b></p>` : ""}${approval}
-      ${v.has_unincorporated_approved_change ? `<a class="link-evidence" href="#/evidence/${esc(t.id)}">View approval evidence records &rarr;</a>` : ""}
+    <section class="panel ${eff.length ? "alert" : ""}"><h2>Approval evidence</h2><div class="body">${approval}
+      ${eff.length ? `<a class="link-evidence" href="#/evidence/${esc(t.id)}">View approval evidence records &rarr;</a>` : ""}
     </div></section>
-    <section class="panel"><h2>Escalation</h2><div class="body">${esc_}
+    <section class="panel"><h2>Escalation</h2><div class="body">${escalation}
       ${v.escalation ? `<button class="btn btn-secondary" id="escalate" ${done ? "disabled" : ""}>${done ? "Escalation noted" : "Escalate to document owner"}</button>
       <div class="escalate-note">${done ? "Demo only: no message was sent and nothing was stored." : "Demo button - it does not send anything."}</div>` : ""}
     </div></section>
-    ${v.other_open_changes.length ? `<section class="panel"><h2>Other approved changes on this asset</h2><div class="body"><ul class="refused">${v.other_open_changes.map((o) => `<li>${esc(o)}</li>`).join("")}</ul></div></section>` : ""}
     <section class="panel"><h2>Records examined</h2><div class="body">
       ${v.changes.length ? `<ul class="refused">${v.changes.map((c) => `<li><b>${esc(c.comm_id)}</b> ${c.effective ? '<span class="pill eff">alters guidance</span>' : `<span class="pill ref">${esc(c.classification.replaceAll("_", " "))}</span>`}</li>`).join("")}</ul>
-      ${refused.length ? `<a href="#/evidence/${esc(t.id)}">All records and reasons &rarr;</a>` : ""}` : '<p class="muted">No later communications for these documents.</p>'}
+      <a href="#/evidence/${esc(t.id)}">All records &rarr;</a>` : '<p class="muted">No later communications for these documents.</p>'}
     </div></section>`;
 }
 function renderRightEmpty() {
@@ -270,30 +275,23 @@ function renderEvidencePage(turnId) {
     <div class="sub">${esc(v.question)} &middot; ${esc(v.equipment_summary)} &middot; governance mode <b>${esc(v.mode)}</b> &middot;
       <span class="badge ${statusClass(v.status)}">${esc(v.status)}</span></div>
     ${recs.map(recordCard).join("")}
-    <p class="muted">A record alters guidance only if all nine conditions hold. Conditions shown as &ndash; were not evaluated because an earlier one failed.</p>
   </div>`;
-  window.scrollTo(0, 0);
 }
 function recordCard(c) {
-  const person = (p) => p ? `${esc(p.name)} (${esc(p.role)})` : "&mdash;";
+  const log = c.log.map((m) =>
+    `<div class="logline ${m.is_this_record ? "this" : ""}">${esc(m.date)}  ${esc(m.channel)}  ${esc(m.comm_id)}
+${esc(m.author)}
+${esc(m.subject)}
+${esc(m.body)}</div>`).join("");
   return `<article class="record ${c.effective ? "effective" : ""}">
-    <header><span class="rid">${esc(c.comm_id)}</span>
-      <span class="tag">${esc(c.channel.replaceAll("_", " "))}</span><span class="muted">${esc(c.date)}</span>
-      <span class="pill">${esc(c.decision_state)}</span><span class="pill">authority ${esc(c.authority_state)}</span>
-      ${c.effective ? '<span class="pill eff">alters guidance - not yet in the document</span>' : `<span class="pill ref">${esc(c.classification.replaceAll("_", " "))}</span>`}
-    </header>
     <div class="rbody"><div>
-      <p><b>${esc(c.subject)}</b></p><blockquote>${esc(c.body)}</blockquote>
-      <dl class="kv"><dt>Author</dt><dd>${person(c.author)}</dd><dt>Approver</dt><dd>${person(c.approver)}</dd>
-        <dt>Decision date</dt><dd>${esc(c.decision_date || "—")}</dd><dt>Formal record</dt><dd>${esc(c.formal_record || "none")}</dd>
-        <dt>Change</dt><dd>${esc(c.change_ref || "—")}</dd><dt>Scope</dt><dd>${esc(c.scope || "—")}</dd>
-        <dt>Affects</dt><dd>${c.affects.map((a) => `${esc(a.doc_id)} p.${a.sections.map(esc).join(", ")}`).join("; ") || "—"}</dd>
-        <dt>Thread</dt><dd>${c.thread.map(esc).join(" &rarr; ") || "—"}</dd>
-        ${c.invalidated_by.length ? `<dt>Invalidated by</dt><dd>${c.invalidated_by.map(esc).join(", ")}</dd>` : ""}
-        ${c.incorporation ? `<dt>Incorporation</dt><dd>${esc(c.incorporation.reason)}</dd>` : ""}</dl>
-    </div><div><table class="cond">${c.conditions.map((k) => `<tr>
-        <td class="${k.skipped ? "skip" : k.passed ? "ok" : "no"}">${k.skipped ? "&ndash;" : k.passed ? "&#10003;" : "&#10007;"}</td>
-        <td><b>${esc(k.label)}</b><br><span class="muted">${esc(k.detail)}</span></td></tr>`).join("")}</table></div></div>
+      <dl class="kv"><dt>Change notice</dt><dd class="rid">${esc(c.comm_id)}</dd>
+        <dt>Channel</dt><dd>${esc(c.channel_label)}</dd>
+        <dt>Decision</dt><dd>${esc(c.decision_state)}${c.decision_date ? " on " + esc(c.decision_date) : ""}</dd>
+        <dt>Approver</dt><dd>${approverText(c)}</dd>
+        <dt>Incorporation</dt><dd>${reflectedText(c.reflected_in_current_document)}</dd></dl>
+      <h3 class="subhead">Change description</h3><p class="desc">${esc(c.summary)}</p>
+    </div><div><h3 class="subhead">Approval log</h3><pre class="log">${log}</pre></div></div>
   </article>`;
 }
 
@@ -308,27 +306,23 @@ function bind() {
   const t = activeTurn();
   document.querySelectorAll("[data-doc]").forEach((el) => el.onclick = () => {
     const d = t.view.documents.find((x) => x.doc_id === el.dataset.doc);
-    state.preview = previewFor(d, firstPage(d)); render();
+    state.preview = previewFor(d, firstPage(d)); rerenderPreview();
   });
   document.querySelectorAll("[data-cite-doc]").forEach((el) => el.onclick = () => {
     const d = t.view.documents.find((x) => x.doc_id === el.dataset.citeDoc);
-    if (d) { state.preview = previewFor(d, Number(el.dataset.citePage)); render(); }
+    if (d) { state.preview = previewFor(d, Number(el.dataset.citePage)); rerenderPreview(); }
   });
-  document.querySelectorAll("[data-tab]").forEach((b) => b.onclick = () => {
-    state.preview.tab = b.dataset.tab;
-    const d = t.view.documents.find((x) => x.doc_id === state.preview.docId);
-    if (b.dataset.tab === "compare" && d && !d.compare_pages.includes(state.preview.page)) {
-      state.preview = previewFor(d, d.compare_pages[0], "compare");
-    }
-    render();
-  });
-  document.querySelectorAll("[data-page]").forEach((b) => b.onclick = () => {
-    const d = t.view.documents.find((x) => x.doc_id === state.preview.docId);
-    const page = Math.max(1, state.preview.page + Number(b.dataset.page));
-    state.preview = previewFor(d, page, state.preview.tab); render();
-  });
+  bindPreview(t);
   const esc_ = $("#escalate"); if (esc_) esc_.onclick = () => { state.escalated[t.id] = true; render(); };
 }
 
-window.addEventListener("hashchange", render);
+function bindPreview(t) {
+  document.querySelectorAll("[data-page]").forEach((b) => b.onclick = () => {
+    const d = t.view.documents.find((x) => x.doc_id === state.preview.docId);
+    const page = Math.max(1, state.preview.page + Number(b.dataset.page));
+    state.preview = previewFor(d, page); rerenderPreview();
+  });
+}
+
+window.addEventListener("hashchange", () => { render(); if (location.hash.startsWith("#/evidence/")) window.scrollTo(0, 0); });
 loadConfig().then(render);

@@ -178,7 +178,7 @@ python scripts/unpack_library.py ../ACH580-01* ../ACS480* ../ACS580-04* ../AF38*
 python scripts/import_library.py          # manifest: 141 publications
 python scripts/ingest_abb.py              # every page, ~30 s
 python scripts/make_synthetic_history.py  # 10 watermarked n-1 PDFs
-python -m pytest -q                       # 71 passed
+python -m pytest -q                       # 72 passed
 ```
 
 Bundles can be zip files or already-unzipped folders, under any download name that starts
@@ -190,7 +190,7 @@ pip install pydantic numpy pymupdf fastapi uvicorn python-multipart reportlab
 PYTHONPATH=. uvicorn docdrift.api:app --port 8000   # demo page at http://localhost:8000
 PYTHONPATH=. python -m docdrift.cli                  # the core use case in the console
 PYTHONPATH=. python scripts/evaluate.py              # 20 cases x 2 modes, writes a scorecard
-PYTHONPATH=. python -m pytest -q                     # 71 tests, offline, ~6 s
+PYTHONPATH=. python -m pytest -q                     # 72 tests, offline, ~6 s
 ```
 
 ### The demo page
@@ -202,17 +202,24 @@ layout follows the demo sketch:
 |---|---|
 | 1 | conversation history for this browser tab |
 | 2 | relevant documents: cited first, then documents a change record targets, then the rest collapsed; ABB/synthetic labels, previous revision |
-| 3 | status, equipment and the cited guidance steps above the document preview. The preview has three tabs: *Page* (the real PDF page with cited passages highlighted), *Extracted text*, and *Compare with previous revision* |
-| 4 | approval evidence, escalation with a demo-only button, other approved changes on the asset, and every record examined |
+| 3 | status, equipment and the cited guidance steps, above the page preview: the real PDF page with the rows and lines the answer relies on highlighted, page arrows, and *Open PDF* |
+| 4 | approval evidence (change notice, channel, decision, approver, whether the change is reflected in the current document, and a one-line change description), escalation with a demo-only button, and every record examined |
 
 The cited guidance sits above the preview because the sketch had no answer area, and the
-operator needs it next to the page it quotes. When an approved change is not yet in the
-document, *View approval evidence records* opens a second page: each record with its
-text, people, formal record, thread, and the nine conditions marked ✓ / ✗ / not evaluated.
-The three demo questions are always shown, and a strict/flexible toggle sets the
-governance mode per question. The page uses ABB's palette: red `#FF000F`, black and
-white, grey neutrals, with orange for *Potential Approved Update* and green for
-*Verified Current*. The ABB logo is not reproduced.
+operator needs it next to the page it quotes. *View approval evidence records* opens a
+second page with one card per record examined: the same five fields and change
+description on the left, and on the right the approval log - every message and notice
+on that change, oldest first, as plain text. The three demo questions are always shown,
+and a strict/flexible toggle sets the governance mode per question. When an answer is
+withheld, each failed check is listed on its own line; if the equipment could not be
+confirmed, only that check is listed, with the closest registered asset. The page uses
+ABB's palette: red `#FF000F`, black and white, grey neutrals, with orange for *Potential
+Approved Update* and green for *Verified Current*. The ABB logo is not reproduced.
+
+Highlighting works in two ways. In tables, a row is marked when it names a term from the
+question ("tightening torque", "5091") and carries a value. In running text, a line is
+marked when the cited passage contains it and it has at least six words. Page navigation
+re-renders only the preview and never moves the page's scroll position.
 
 The history lives only in the page's memory. It is never put in localStorage or
 sessionStorage, and a reload clears it.
@@ -385,7 +392,7 @@ that no superseded revision was cited, and that the gates held. Current result:
 the anchoring of every change thread to its real page, frame-range applicability, each
 governance branch, invalidation with and without authority, both modes, the n-1 window,
 the OCR interface, citation validation, gate blocking, the audit switch, stack selection,
-the demo-page API, the synthetic PDFs and download-name handling. **71 tests,
+the demo-page API, the synthetic PDFs and download-name handling. **72 tests,
 no network, ~6 s.**
 
 A fresh checkout has the manifest but not the library. There, the 17 tests that assert on

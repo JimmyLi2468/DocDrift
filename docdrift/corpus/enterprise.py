@@ -10,6 +10,7 @@ real current ABB document; the page numbers are asserted in tests/test_corpus.py
 from __future__ import annotations
 
 import random
+import re
 from dataclasses import dataclass, field
 from datetime import date, timedelta
 
@@ -465,6 +466,34 @@ def _filler(rng: random.Random, start: date, days: int, n: int,
     return sorted(out, key=lambda c: c.date)
 
 
+#: Plain-language change descriptions shown on the operator page ("Change description").
+CHANGE_SUMMARIES = {
+    "ECN-2026-011": "Terminate the STO conductors at X4 with ferrules and re-torque the X4 terminals "
+                    "when fault 5091 recurs after warm-up; use shielded twisted pair for STO runs over 10 m.",
+    "ECN-2025-129": "State in the fault table that 5091 is a programmable fault set by parameter 31.22.",
+    "ECN-2025-071": "Add a check of parameter 95.04 Control board supply to the ACS480 fault 5091 entry.",
+    "ECN-2022-015": "Ground the ACS580-04 input cable shields 360° at the enclosure entry plate.",
+    "ECN-2025-102": "Inspect ACS580 drives once a year.",
+    "C-4130": "Use the supplier's pre-terminated STO wiring kit on the ACS580 panels.",
+    "C-4111": "Inspect PSTX softstarters every 6 months, and inspect the bypass contactor after any "
+              "short circuit thyristor fault.",
+    "C-4121": "Not a decision: a tentative reply to the proposal (C-4120) to change S1 parameter "
+              "13.02 EOL class from 10 to 20, deferred until after the safety review.",
+    "ECN-2026-033": "Tighten AF26...AF38 main terminals with a calibrated torque tool and re-check the "
+                    "torque after the first 500 operating hours.",
+    "ECN-2026-031": "Hold the AF09...AF38 coil supply between 0.9 and 1.05 x Uc, tighter than the catalogue limits.",
+    "ECN-2026-027": "Allow a standard MS132 starter instead of the MS132-T on transformer primaries where "
+                    "inrush is below 8 x rated current.",
+    "EB-2026-020": "Record a motor-cable insulation resistance measurement before the first start of ACS480 drives.",
+}
+
+
+def _summary(comm: Communication) -> str:
+    if comm.comm_id in CHANGE_SUMMARIES:
+        return CHANGE_SUMMARIES[comm.comm_id]
+    return re.sub(r"^(ECN|EB|CHG)-\d{4}-\d+\s*", "", comm.subject).strip()
+
+
 # ------------------------------------------------------------------ assembly
 
 @dataclass
@@ -503,7 +532,8 @@ def build_corpus(seed: int = 20260922, filler_count: int = 42,
                                       owners=DOC_OWNERS)
     equipment = assign_documents(EQUIPMENT, manifest)
     rng = random.Random(seed)
-    comms = SCENARIO_COMMS + _filler(rng, date(2026, 5, 1), 92, filler_count, equipment)
+    comms = [c.model_copy(update={"summary": c.summary or _summary(c)})
+             for c in SCENARIO_COMMS + _filler(rng, date(2026, 5, 1), 92, filler_count, equipment)]
     return Corpus(
         departments=DEPARTMENTS, people=PEOPLE, equipment=equipment,
         versions=versions, chunks=chunks,

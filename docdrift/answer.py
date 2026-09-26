@@ -227,6 +227,17 @@ def _disclose(candidate) -> ChangeDisclosure:
 
 def build_answer(bundle: EvidenceBundle, store, llm) -> OperatorAnswer:
     eq = bundle.equipment.equipment
+    from .config import Thresholds
+    near_miss = eq is not None and bundle.equipment.confidence < Thresholds().equipment_confidence_min
+    if near_miss:
+        hint = (f"The closest match is {eq.asset_tag} - {eq.name}, {eq.type_code or eq.model} "
+                f"({'; '.join(bundle.equipment.evidence) or 'weak match'}). If that is the machine, "
+                f"ask again with the tag {eq.asset_tag} or the full type code {eq.type_code or eq.model}.")
+        return OperatorAnswer(
+            question=bundle.question, answered=False, mode=bundle.mode,
+            equipment_summary=f"not confirmed (closest: {eq.asset_tag}, {eq.type_code or eq.model})",
+            equipment_confidence=bundle.equipment.confidence,
+            status=DocumentationStatus.INSUFFICIENT_EVIDENCE, clarification_needed=hint)
     if eq is None:
         return OperatorAnswer(
             question=bundle.question, answered=False, mode=bundle.mode,
