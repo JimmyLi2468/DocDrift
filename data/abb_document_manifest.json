@@ -1,0 +1,3550 @@
+{
+ "generated": "2026-09-26",
+ "note": "Identities of ABB publications supplied by the user under data/library/. The PDFs are a local working copy and are not redistributed with DocDrift.",
+ "bundles": {
+  "ACH580-01": "ACH580-01",
+  "ACS480": "ACS480",
+  "ACS580-04": "ACS580-04",
+  "PSTX30-600-70": "PSTX30-600-70",
+  "PSTX142-600-70": "PSTX142-600-70",
+  "PSR25-600-70": "PSR25-600-70",
+  "AF38-30-00-13": "AF38-30-00-13",
+  "MS132-10T": "MS132-10T"
+ },
+ "documents": [
+  {
+   "doc_key": "3AFE61348280",
+   "abb_document_id": "3AFE61348280",
+   "title": "Technical guide No. 3",
+   "category": "drives",
+   "doc_type": "technical_guide",
+   "revision": "E",
+   "language": "en",
+   "file_name": "3AFE61348280_en_E_3 Technical guide, EMC compliant installation and configuration for a power drive system.pdf",
+   "library_path": "ACH580-01/3AFE61348280_en_E_3 Technical guide, EMC compliant installation and configuration for a power drive system.pdf",
+   "bundles": [
+    "ACH580-01",
+    "ACS580-04"
+   ],
+   "alternate_copies": [
+    "ACS580-04/3AFE61348280_en_E_3 Technical guide, EMC compliant installation and configuration for a power drive system.pdf"
+   ],
+   "n_pages": 40,
+   "bytes": 14887924,
+   "sha256": "b8fe5eb717fb2d940630f480e5c174b891cdc532989d4542896c959bcb53de43",
+   "published": "2024-03-15",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "3AXD10000387059",
+   "abb_document_id": "3AXD10000387059",
+   "title": "Fieldbus manual 3AXD10000387059",
+   "category": "drives",
+   "doc_type": "fieldbus_manual",
+   "revision": "B",
+   "language": "en",
+   "file_name": "3AXD10000387059_en_B_ACH580_BACnet_Protocol_Implementation_Conformance_Statement_PICS.pdf",
+   "library_path": "ACH580-01/3AXD10000387059_en_B_ACH580_BACnet_Protocol_Implementation_Conformance_Statement_PICS.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [],
+   "n_pages": 22,
+   "bytes": 410600,
+   "sha256": "982c096f36b2aa15c1a174d5100c49d7d49473301db9e67902bc2b3b07822c5d",
+   "published": "2025-05-13",
+   "covers_models": [
+    "ACH580"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "3AXD50000652150",
+   "abb_document_id": "3AXD50000652150",
+   "title": "Technical document 3AXD50000652150",
+   "category": "drives",
+   "doc_type": "technical_document",
+   "revision": "A",
+   "language": "en",
+   "file_name": "3AXD50000652150_ACH580-BxR_VxRBypassControlUnitReplaceInstREVA.pdf",
+   "library_path": "ACH580-01/3AXD50000652150_ACH580-BxR_VxRBypassControlUnitReplaceInstREVA.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [],
+   "n_pages": 10,
+   "bytes": 1831213,
+   "sha256": "512af64b4e92a961a56960e9f8fc7a9c5329956f6267bd610ff15da731bcdb2f",
+   "published": "2020-07-15",
+   "covers_models": [
+    "ACH580",
+    "ACH580-01",
+    "ACH580-31"
+   ],
+   "identity_source": "file name; revision from document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "3AXD50001020033",
+   "abb_document_id": "3AXD50001020033",
+   "title": "EN / ACS580-01 drives quick installation and start-up guide",
+   "category": "drives",
+   "doc_type": "quick_guide",
+   "revision": "D",
+   "language": "en",
+   "file_name": "3AXD50001020033_en_1_D_ACH580-01 drives quick installation and start-up guide for China Market.pdf",
+   "library_path": "ACH580-01/3AXD50001020033_en_1_D_ACH580-01 drives quick installation and start-up guide for China Market.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 7240268,
+   "sha256": "7297a688f569cd893ff883680a128431ebc0af44ad94e67e7c9b98c7908f28d9",
+   "published": "2026-09-15",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "3AXD50001019310",
+   "abb_document_id": "3AXD50001019310",
+   "title": "ACS580-01…, ACH580-01… and ACQ580-01…IP66 / UL Type 4X Flange mounting kit quick installation guide for frames R1 to R3",
+   "category": "drives",
+   "doc_type": "quick_guide",
+   "revision": "A",
+   "language": "en",
+   "file_name": "4X_Flange_Mounting_KitQuick_Installation_Guide_RevA.pdf",
+   "library_path": "ACH580-01/4X_Flange_Mounting_KitQuick_Installation_Guide_RevA.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 2035631,
+   "sha256": "7d5440ac23348cf3466b3557cccb3f9c54b0facf97f0353d881e69e74d914790",
+   "published": "2024-05-28",
+   "covers_models": [
+    "ACS580-01",
+    "ACH580-01"
+   ],
+   "identity_source": "document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "9AKK108471A1435",
+   "abb_document_id": "9AKK108471A1435",
+   "title": "EN / ACS580-01 drives quick installation and start-up guide",
+   "category": "drives",
+   "doc_type": "quick_guide",
+   "revision": "B",
+   "language": "en",
+   "file_name": "9AKK108471A1435_en_B_3AXD50001304409_ACH580-01_Quick_Installation_and_Start-up_Guide_US.pdf",
+   "library_path": "ACH580-01/9AKK108471A1435_en_B_3AXD50001304409_ACH580-01_Quick_Installation_and_Start-up_Guide_US.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [],
+   "n_pages": 16,
+   "bytes": 7456306,
+   "sha256": "cbcb686c865654262328324188ac6e81bf7c8117245df8387d764ffc2f83e207",
+   "published": "2019-04-07",
+   "covers_models": [
+    "ACH580",
+    "ACH580-01"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "9AKK108472A9651",
+   "abb_document_id": "9AKK108472A9651",
+   "title": "dimensions after DWG/DXF conversion.",
+   "category": "drives",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "9AKK108472A9651_en_3AXD50000102303_A_ACX580-01_TYPE1_R1-2.pdf",
+   "library_path": "ACH580-01/9AKK108472A9651_en_3AXD50000102303_A_ACX580-01_TYPE1_R1-2.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [
+    "ACH580-01/9AKK108472A9651_en_3AXD50000102303_A_ACX580-01_TYPE1_R1.pdf"
+   ],
+   "n_pages": 1,
+   "bytes": 925363,
+   "sha256": "bfe917b7fe156209ccb51084e4b2f32d9dca5cffea36152f58dba59695c6759d",
+   "published": "2018-11-01",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "3AXD50000349821",
+   "abb_document_id": "3AXD50000349821",
+   "title": "ACS580-01, ACH580-01 and ACQ580-01 +C135 supplement",
+   "category": "drives",
+   "doc_type": "hardware_manual",
+   "revision": "F",
+   "language": "en",
+   "file_name": "EN_ACH580-01 ACQ580-01 ACS580-01_C135 SUPPL_F.pdf",
+   "library_path": "ACH580-01/EN_ACH580-01 ACQ580-01 ACS580-01_C135 SUPPL_F.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [],
+   "n_pages": 112,
+   "bytes": 19090791,
+   "sha256": "b8c3eb8cbe991737a00f988d0b9da3cdb9a343ece716df263934c504150b8baa",
+   "published": "2026-09-25",
+   "covers_models": [
+    "ACS580-01",
+    "ACH580-01",
+    "ACQ580-01"
+   ],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "3AUA0000094606",
+   "abb_document_id": "3AUA0000094606",
+   "title": "EN / Drive Composer Start-up and maintenance PC tool",
+   "category": "drives",
+   "doc_type": "user_manual",
+   "revision": null,
+   "language": "en",
+   "file_name": "EN_DriveCompPC_tool_UM_AA_A4.pdf",
+   "library_path": "ACH580-01/EN_DriveCompPC_tool_UM_AA_A4.pdf",
+   "bundles": [
+    "ACH580-01",
+    "ACS480",
+    "ACS580-04"
+   ],
+   "alternate_copies": [
+    "ACS480/EN_DriveCompPC_tool_UM_AA_A4.pdf",
+    "ACS580-04/EN_DriveCompPC_tool_UM_AA_A4.pdf"
+   ],
+   "n_pages": 316,
+   "bytes": 38230985,
+   "sha256": "c5e8011f22678327506e0a0418ef1891474c04c37feaa155432c10ef2c744120",
+   "published": "2026-07-23",
+   "covers_models": [
+    "ACS880",
+    "ACS800",
+    "ACS880-01",
+    "ACQ580",
+    "ACS380",
+    "ACH580",
+    "ACS480",
+    "ACS580"
+   ],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "3AXD50000031460",
+   "abb_document_id": "3AXD50000031460",
+   "title": "ACS580-01…+C135, ACH580-01…+C135 and ACQ580-01…+C135 frames R4 and R5 flange mounting kit quick installation guide",
+   "category": "drives",
+   "doc_type": "quick_guide",
+   "revision": "E",
+   "language": "en",
+   "file_name": "EN_Flange mounting ACX580_01 C135 R4_R5 QG_E_A3.pdf",
+   "library_path": "ACH580-01/EN_Flange mounting ACX580_01 C135 R4_R5 QG_E_A3.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 17340185,
+   "sha256": "78f2827a427b4222cedfcff9365d0f8dc402b943dd3f022d478b66f1f1b7bdc7",
+   "published": "2026-09-22",
+   "covers_models": [
+    "ACH580-01",
+    "ACQ580-01",
+    "ACS580-01"
+   ],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "EN-TechnicalguideNo10-REVF",
+   "abb_document_id": null,
+   "title": "Technical guide No. 10",
+   "category": "drives",
+   "doc_type": "technical_guide",
+   "revision": "F",
+   "language": "en",
+   "file_name": "EN_TechnicalguideNo10_REVF.pdf",
+   "library_path": "ACH580-01/EN_TechnicalguideNo10_REVF.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [],
+   "n_pages": 44,
+   "bytes": 4438736,
+   "sha256": "f6705b3bb525bcbeba2b938302acf239f766e7a02cf29e0674a22f1370f65c33",
+   "published": "2017-11-23",
+   "covers_models": [],
+   "identity_source": "none found; date: PDF creation date"
+  },
+  {
+   "doc_key": "9AKK107492A8100",
+   "abb_document_id": "9AKK107492A8100",
+   "title": "Intelligent Pump Control (IPC)",
+   "category": "drives",
+   "doc_type": "technical_document",
+   "revision": "B",
+   "language": "en",
+   "file_name": "IPC_Intelligent_multipump_configuration_guide_revB.pdf",
+   "library_path": "ACH580-01/IPC_Intelligent_multipump_configuration_guide_revB.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [],
+   "n_pages": 16,
+   "bytes": 1124100,
+   "sha256": "41bebb7eb3eb9fa9047ee0b272d639e410324f8d93c4e0a5ee1cfc924a4564b9",
+   "published": "2021-08-12",
+   "covers_models": [
+    "ACQ580",
+    "ACH580"
+   ],
+   "identity_source": "document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "4FPS10000309652",
+   "abb_document_id": "4FPS10000309652",
+   "title": "Maintenance schedule - ACS580, ACH580 and ACQ580 drives",
+   "category": "drives",
+   "doc_type": "maintenance_schedule",
+   "revision": null,
+   "language": "en",
+   "file_name": "Maintenance schedule ACS580 ACH580 ACQ580 drives_rev T.pdf",
+   "library_path": "ACH580-01/Maintenance schedule ACS580 ACH580 ACQ580 drives_rev T.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [],
+   "n_pages": 4,
+   "bytes": 211359,
+   "sha256": "e29cdfbaa3045ba92381bc01091570dbd6c57a68aa8a9ae1f2b2b0510c6803f1",
+   "published": "2026-04-27",
+   "covers_models": [
+    "ACS580",
+    "ACH580",
+    "ACQ580",
+    "ACH580-31",
+    "ACQ580-31"
+   ],
+   "identity_source": "document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "3AXD10002270892",
+   "abb_document_id": "3AXD10002270892",
+   "title": "NEW BERLIN, JULY 31S T 2024",
+   "category": "drives",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "Manufacturers_Statement_on_IEC60721-3-3_for_ACH580.pdf",
+   "library_path": "ACH580-01/Manufacturers_Statement_on_IEC60721-3-3_for_ACH580.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 280914,
+   "sha256": "13310b04185f23e5d0244e0bba440e7f45639019037b34e528cb4d33bf720ced",
+   "published": "2024-08-01",
+   "covers_models": [],
+   "identity_source": "document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "3AXD50001158699",
+   "abb_document_id": "3AXD50001158699",
+   "title": "ABB LOW VOLTAGE DRIVES",
+   "category": "drives",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "Pressure_Compensation_Valve_Installation_Instructions_RevB-2.pdf",
+   "library_path": "ACH580-01/Pressure_Compensation_Valve_Installation_Instructions_RevB-2.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [
+    "ACH580-01/Pressure_Compensation_Valve_Installation_Instructions_RevB.pdf"
+   ],
+   "n_pages": 1,
+   "bytes": 437586,
+   "sha256": "a42d2c7739368eaeaed78f561f8208562dae85eb13fad474d76dd94fa06cae26",
+   "published": "2024-07-30",
+   "covers_models": [],
+   "identity_source": "document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "Sensorless-flow-calculation-configuration-guide-",
+   "abb_document_id": null,
+   "title": "Sensorless flow calculation",
+   "category": "drives",
+   "doc_type": "technical_document",
+   "revision": "C",
+   "language": "en",
+   "file_name": "Sensorless_flow_calculation_configuration_guide_revC.pdf",
+   "library_path": "ACH580-01/Sensorless_flow_calculation_configuration_guide_revC.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [],
+   "n_pages": 19,
+   "bytes": 908435,
+   "sha256": "c690f44ae52ca240fadc32881dd75cd75f238dd22102cdd4408986818b67463c",
+   "published": "2021-08-07",
+   "covers_models": [
+    "ACQ580",
+    "ACH580"
+   ],
+   "identity_source": "none found; date: PDF creation date"
+  },
+  {
+   "doc_key": "3AFE64362534",
+   "abb_document_id": "3AFE64362534",
+   "title": "Technical guide No. 8",
+   "category": "drives",
+   "doc_type": "technical_guide",
+   "revision": "C",
+   "language": "en",
+   "file_name": "Technical_guide_No_8_3AFE64362534_RevC.pdf",
+   "library_path": "ACH580-01/Technical_guide_No_8_3AFE64362534_RevC.pdf",
+   "bundles": [
+    "ACH580-01"
+   ],
+   "alternate_copies": [],
+   "n_pages": 32,
+   "bytes": 2935919,
+   "sha256": "794291bc031e9541df7de4ac02b4be452fc55923307390e9e4bf78448cd8475d",
+   "published": "2018-05-31",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "3AUA0000085685",
+   "abb_document_id": "3AUA0000085685",
+   "title": "OPTIONS FOR ABB DRIVES",
+   "category": "drives",
+   "doc_type": "user_manual",
+   "revision": "H",
+   "language": "en",
+   "file_name": "3AUA0000085685_en_1_H_ACS-AP-I, -S, -W, -WP and ACH-AP-H, -W Assistant control panels user's manual.pdf",
+   "library_path": "ACS480/3AUA0000085685_en_1_H_ACS-AP-I, -S, -W, -WP and ACH-AP-H, -W Assistant control panels user's manual.pdf",
+   "bundles": [
+    "ACS480",
+    "ACS580-04"
+   ],
+   "alternate_copies": [
+    "ACS580-04/3AUA0000085685_en_1_H_ACS-AP-I, -S, -W, -WP and ACH-AP-H, -W Assistant control panels user's manual.pdf"
+   ],
+   "n_pages": 116,
+   "bytes": 12851106,
+   "sha256": "94830abd3d3440e5420bd5e40c4cece77dd0126e78a51698c64af223a8ba93c6",
+   "published": "2026-06-04",
+   "covers_models": [
+    "ACS380",
+    "ACS580",
+    "ACS480",
+    "ACS180",
+    "ACS280",
+    "ACS530",
+    "ACS560",
+    "ACS880",
+    "ACS860",
+    "ACH580"
+   ],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "9AKK108471A3293",
+   "abb_document_id": "9AKK108471A3293",
+   "title": "Drive Composer 3 Frequently Asked Questions",
+   "category": "drives",
+   "doc_type": "release_note",
+   "revision": "A",
+   "language": "en",
+   "file_name": "9AKK108471A3293_en_A_Drive Composer 3 FAQ.pdf",
+   "library_path": "ACS480/9AKK108471A3293_en_A_Drive Composer 3 FAQ.pdf",
+   "bundles": [
+    "ACS480",
+    "ACS580-04"
+   ],
+   "alternate_copies": [
+    "ACS580-04/9AKK108471A3293_en_A_Drive Composer 3 FAQ.pdf"
+   ],
+   "n_pages": 4,
+   "bytes": 81163,
+   "sha256": "90883e82e4738df27d8f66bf292a35cddd22eafbeb3ef265b9315ddb7349778f",
+   "published": "2025-06-24",
+   "covers_models": [
+    "ACS380"
+   ],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "3AXD50000047399",
+   "abb_document_id": "3AXD50000047399",
+   "title": "ACS480 drives standard control program firmware manual",
+   "category": "drives",
+   "doc_type": "firmware_manual",
+   "revision": "G",
+   "language": "en",
+   "file_name": "ASDKA220x_en.pdf",
+   "library_path": "ACS480/ASDKA220x_en.pdf",
+   "bundles": [
+    "ACS480"
+   ],
+   "alternate_copies": [
+    "ACS480/EN_ACS480_FW_G_A5.pdf"
+   ],
+   "n_pages": 614,
+   "bytes": 11496750,
+   "sha256": "e01d6cabcffa00b794f9f5c3905e27dce0f32d1419578031a5495d28c80bf499",
+   "published": "2025-11-05",
+   "covers_models": [
+    "ACS480",
+    "ACS550",
+    "AF90"
+   ],
+   "identity_source": "document text; revision from document text; date: printed revision date"
+  },
+  {
+   "doc_key": "9AKK107046A6580",
+   "abb_document_id": "9AKK107046A6580",
+   "title": "Pure easiness for a wide range",
+   "category": "drives",
+   "doc_type": "application_guide",
+   "revision": "A",
+   "language": "en",
+   "file_name": "Application_guide_Pure_easiness_for_a_wide_range_of_applications_ACS580_and_ACS480_EN_9AKK107046A6580_RevA.pdf",
+   "library_path": "ACS480/Application_guide_Pure_easiness_for_a_wide_range_of_applications_ACS580_and_ACS480_EN_9AKK107046A6580_RevA.pdf",
+   "bundles": [
+    "ACS480"
+   ],
+   "alternate_copies": [],
+   "n_pages": 18,
+   "bytes": 2851530,
+   "sha256": "39d2a25b83c621ebe1ae1b4a705cd0e3df099f4f1d688a484f5000b01d7f0ff4",
+   "published": "2018-09-05",
+   "covers_models": [
+    "ACS580",
+    "ACS480"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "3AXD50000235254",
+   "abb_document_id": "3AXD50000235254",
+   "title": "Technical document 3AXD50000235254",
+   "category": "drives",
+   "doc_type": "technical_document",
+   "revision": "G",
+   "language": "en",
+   "file_name": "EN_ACS380 R0-R2 UL kit_QIG_G_A3.pdf",
+   "library_path": "ACS480/EN_ACS380 R0-R2 UL kit_QIG_G_A3.pdf",
+   "bundles": [
+    "ACS480"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 2028372,
+   "sha256": "ac3075e4d92d6009e45e8794c0af8c6455c14149d7dd7da2a1759c353d5aa17a",
+   "published": "2023-02-22",
+   "covers_models": [
+    "ACS480",
+    "ACH480",
+    "ACS380"
+   ],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "3AXD50000047392",
+   "abb_document_id": "3AXD50000047392",
+   "title": "ACS480 hardware manual",
+   "category": "drives",
+   "doc_type": "hardware_manual",
+   "revision": "F",
+   "language": "en",
+   "file_name": "EN_ACS480_HW_F_A5.pdf",
+   "library_path": "ACS480/EN_ACS480_HW_F_A5.pdf",
+   "bundles": [
+    "ACS480"
+   ],
+   "alternate_copies": [],
+   "n_pages": 262,
+   "bytes": 9192862,
+   "sha256": "a6546b626df80049ae23775fb70037540674b61622b94a16e6678e1864ab232d",
+   "published": "2024-05-20",
+   "covers_models": [
+    "ACS480",
+    "ACS480-04",
+    "MS165",
+    "MS132"
+   ],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "3AXD50000047400",
+   "abb_document_id": "3AXD50000047400",
+   "title": "ACS480 drives quick installation and start-up guide",
+   "category": "drives",
+   "doc_type": "quick_guide",
+   "revision": "E",
+   "language": "en",
+   "file_name": "EN_ACS480_QISG_E_A3.pdf",
+   "library_path": "ACS480/EN_ACS480_QISG_E_A3.pdf",
+   "bundles": [
+    "ACS480"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 2204353,
+   "sha256": "72c71d658bcafd389f7bdad3b8b2b05c1a8921505fa267f0cfacdb87703f1bbc",
+   "published": "2024-04-25",
+   "covers_models": [
+    "ACS480"
+   ],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "3AXD50000242375",
+   "abb_document_id": "3AXD50000242375",
+   "title": "Installation instruction 3AXD50000242375",
+   "category": "drives",
+   "doc_type": "installation_instruction",
+   "revision": "J",
+   "language": "en",
+   "file_name": "EN_ACSx80_R3-R4_UL_kit_IG_J_A3.pdf",
+   "library_path": "ACS480/EN_ACSx80_R3-R4_UL_kit_IG_J_A3.pdf",
+   "bundles": [
+    "ACS480"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 18190671,
+   "sha256": "14d2c88fcafb75706a85d3e76f4311480cf6a331ab8052047db8cafb1acebcb7",
+   "published": "2025-03-28",
+   "covers_models": [
+    "ACS380",
+    "ACH180",
+    "ACS180",
+    "ACH480",
+    "ACS480"
+   ],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "3AXD50000221103",
+   "abb_document_id": "3AXD50000221103",
+   "title": "EN / BAPO, BREL, BRES, and BTAC modules quick installation guide",
+   "category": "drives",
+   "doc_type": "quick_guide",
+   "revision": "D",
+   "language": "en",
+   "file_name": "EN_BAPO-BREL-BRES-BTAC_QIG_D.pdf",
+   "library_path": "ACS480/EN_BAPO-BREL-BRES-BTAC_QIG_D.pdf",
+   "bundles": [
+    "ACS480"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 800448,
+   "sha256": "3078bc7d1a3fdc14bc41b49080c65039393a405aa2f8a5cf4df804ff6f826b97",
+   "published": "2021-06-03",
+   "covers_models": [],
+   "identity_source": "document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "3AXD50000009929",
+   "abb_document_id": "3AXD50000009929",
+   "title": "Application note 3AXD50000009929",
+   "category": "drives",
+   "doc_type": "application_note",
+   "revision": null,
+   "language": "en",
+   "file_name": "Technical_Note_061_How_to_use_multidrop_panelbus.pdf",
+   "library_path": "ACS480/Technical_Note_061_How_to_use_multidrop_panelbus.pdf",
+   "bundles": [
+    "ACS480"
+   ],
+   "alternate_copies": [],
+   "n_pages": 3,
+   "bytes": 202602,
+   "sha256": "96c6c4fe0494fb834ed1f2e57a539c1fe26f7741b3bb48362f9cf5a2b611147b",
+   "published": "2021-06-21",
+   "covers_models": [
+    "ACS880"
+   ],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "3AXD50000645015",
+   "abb_document_id": "3AXD50000645015",
+   "title": "Hardware manual 3AXD50000645015",
+   "category": "drives",
+   "doc_type": "hardware_manual",
+   "revision": "K",
+   "language": "en",
+   "file_name": "3AXD50000645015_Branch_Circuit_Protection_K.pdf",
+   "library_path": "ACS580-04/3AXD50000645015_Branch_Circuit_Protection_K.pdf",
+   "bundles": [
+    "ACS580-04"
+   ],
+   "alternate_copies": [],
+   "n_pages": 60,
+   "bytes": 1696637,
+   "sha256": "e770c50b19e4731b2129032fc1110d2d44a94a6c1ed00e1499f371034c3fc3aa",
+   "published": "2024-12-04",
+   "covers_models": [
+    "ACS580-01",
+    "ACS880",
+    "ACS880-01",
+    "ACS380-04",
+    "ACQ580-01",
+    "MS165",
+    "ACH580-01",
+    "ACQ580-31",
+    "ACS880-04",
+    "MS132",
+    "ACS880-11",
+    "ACS880-14",
+    "ACS380",
+    "ACH580-31",
+    "ACQ580-04",
+    "ACH580",
+    "ACQ580-34",
+    "ACH580-04",
+    "ACS880-31",
+    "ACS880-34",
+    "ACS580",
+    "ACH580-34"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "9AKK108471A3335",
+   "abb_document_id": "9AKK108471A3335",
+   "title": "DRIVE COMPOSER 3",
+   "category": "drives",
+   "doc_type": "release_note",
+   "revision": "A",
+   "language": "en",
+   "file_name": "9AKK108471A3335_en_1_A_Drive Composer 3 product presentation.pdf",
+   "library_path": "ACS580-04/9AKK108471A3335_en_1_A_Drive Composer 3 product presentation.pdf",
+   "bundles": [
+    "ACS580-04"
+   ],
+   "alternate_copies": [],
+   "n_pages": 5,
+   "bytes": 350881,
+   "sha256": "ff0a8d2beefd3aacd255a214223cd95900110561a1918ba3eca89cb6f2503c21",
+   "published": "2025-06-25",
+   "covers_models": [
+    "ACS380"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "3AUA0000197173",
+   "abb_document_id": "3AUA0000197173",
+   "title": "ACS580 general purpose drives",
+   "category": "drives",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "ACS580_technical_eBook_3AUA0000197173 RevB_EN.pdf",
+   "library_path": "ACS580-04/ACS580_technical_eBook_3AUA0000197173 RevB_EN.pdf",
+   "bundles": [
+    "ACS580-04"
+   ],
+   "alternate_copies": [],
+   "n_pages": 24,
+   "bytes": 1677810,
+   "sha256": "fc2d1dbde0eba6631f1d9f4bb0f9d69b9761238b3df33e02e47d28097b532d37",
+   "published": "2017-10-30",
+   "covers_models": [
+    "ACS580"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "3AXD50000016097",
+   "abb_document_id": "3AXD50000016097",
+   "title": "ACS580 drives standard control program firmware manual",
+   "category": "drives",
+   "doc_type": "firmware_manual",
+   "revision": "J",
+   "language": "en",
+   "file_name": "ASCD2220x_en.pdf",
+   "library_path": "ACS580-04/ASCD2220x_en.pdf",
+   "bundles": [
+    "ACS580-04"
+   ],
+   "alternate_copies": [
+    "ACS580-04/ASCD4220x_en.pdf",
+    "ACS580-04/EN_ACS580_FW_J_A5.pdf"
+   ],
+   "n_pages": 632,
+   "bytes": 11275244,
+   "sha256": "57a2a9ae2c62cb4c58b188c2608299fab8eea4c32c00714d81df1b64e8f41130",
+   "published": "2025-10-01",
+   "covers_models": [
+    "ACS580",
+    "ACS550",
+    "ACS580-01",
+    "ACH580-01",
+    "ACQ580-01",
+    "ACS580-04",
+    "ACS580-07",
+    "AF90"
+   ],
+   "identity_source": "document text; revision from document text; date: printed revision date"
+  },
+  {
+   "doc_key": "3AXD50000015497",
+   "abb_document_id": "3AXD50000015497",
+   "title": "ACS580-04 drive modules hardware manual",
+   "category": "drives",
+   "doc_type": "hardware_manual",
+   "revision": "F",
+   "language": "en",
+   "file_name": "EN_ACS580-04_HW_F_A4_appendix_A3.pdf",
+   "library_path": "ACS580-04/EN_ACS580-04_HW_F_A4_appendix_A3.pdf",
+   "bundles": [
+    "ACS580-04"
+   ],
+   "alternate_copies": [],
+   "n_pages": 298,
+   "bytes": 53454038,
+   "sha256": "a902328d84a277c85931d04c75530bd361c327a19eefe91c843d9ef1520b7519",
+   "published": "2022-09-26",
+   "covers_models": [
+    "ACS580-04",
+    "ACS580"
+   ],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "3AUA0000107668",
+   "abb_document_id": "3AUA0000107668",
+   "title": "EN/ Drive modules cabinet design and construction instructions",
+   "category": "drives",
+   "doc_type": "technical_document",
+   "revision": "F",
+   "language": "en",
+   "file_name": "EN_Drive modules cabinet design and construction_INSTR_F.pdf",
+   "library_path": "ACS580-04/EN_Drive modules cabinet design and construction_INSTR_F.pdf",
+   "bundles": [
+    "ACS580-04"
+   ],
+   "alternate_copies": [],
+   "n_pages": 30,
+   "bytes": 3890834,
+   "sha256": "26e5a51a1f31ca65451575d505bb0c72af229e827569f34ee49c4c01300d127e",
+   "published": "2026-03-20",
+   "covers_models": [
+    "ACS880"
+   ],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "3AXD50000518333",
+   "abb_document_id": "3AXD50000518333",
+   "title": "EN / Single drive cabinets and modules electrical planning isntructions",
+   "category": "drives",
+   "doc_type": "technical_document",
+   "revision": "A",
+   "language": "en",
+   "file_name": "EN_SD-cabinets-modules-el-planning_INSTR_A.pdf",
+   "library_path": "ACS580-04/EN_SD-cabinets-modules-el-planning_INSTR_A.pdf",
+   "bundles": [
+    "ACS580-04"
+   ],
+   "alternate_copies": [],
+   "n_pages": 36,
+   "bytes": 1064843,
+   "sha256": "3aa2bc05252083cc7eb8d484cca9edbbbbf480c8f294bb8c42eb60a850ce0689",
+   "published": "2019-09-12",
+   "covers_models": [
+    "ACS880",
+    "ACS580",
+    "ACH580",
+    "ACQ580",
+    "ACQ580-07"
+   ],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "3AUA0000192908",
+   "abb_document_id": "3AUA0000192908",
+   "title": "Technical description",
+   "category": "drives",
+   "doc_type": "application_note",
+   "revision": "A",
+   "language": "en",
+   "file_name": "EN_Techn.description_ACS580_EN_3AUA0000192908_RevA.pdf",
+   "library_path": "ACS580-04/EN_Techn.description_ACS580_EN_3AUA0000192908_RevA.pdf",
+   "bundles": [
+    "ACS580-04"
+   ],
+   "alternate_copies": [],
+   "n_pages": 4,
+   "bytes": 436069,
+   "sha256": "c595bec708f11496fb47a3876a7b602f88ce70049ac1828f5dbebd92968a6625",
+   "published": "2016-02-18",
+   "covers_models": [
+    "ACS580"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "3AXD50000015469",
+   "abb_document_id": "3AXD50000015469",
+   "title": "MUL / ACS580-04 quick installation and start-up guide",
+   "category": "drives",
+   "doc_type": "quick_guide",
+   "revision": "F",
+   "language": "mul",
+   "file_name": "MUL_ACS580-04_QISG_A4_F.pdf",
+   "library_path": "ACS580-04/MUL_ACS580-04_QISG_A4_F.pdf",
+   "bundles": [
+    "ACS580-04"
+   ],
+   "alternate_copies": [],
+   "n_pages": 256,
+   "bytes": 9218837,
+   "sha256": "fb7ac11a5e76baa667ac22fc2fb9a93a4d571e9441e2370579f2245aebd8b8f8",
+   "published": "2023-03-01",
+   "covers_models": [
+    "ACS580-04"
+   ],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "3AXD50000012770",
+   "abb_document_id": "3AXD50000012770",
+   "title": "ESD Export User's manual",
+   "category": "drives",
+   "doc_type": "user_manual",
+   "revision": "A",
+   "language": "en",
+   "file_name": "en_ESD_EXport_User_manual_A_A4.pdf",
+   "library_path": "ACS580-04/en_ESD_EXport_User_manual_A_A4.pdf",
+   "bundles": [
+    "ACS580-04"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 527771,
+   "sha256": "ad53b9a4f6d0e0b08b44c438f920fdc4f3e01f5407d7ffeb2292e9e16a16619d",
+   "published": "2014-01-17",
+   "covers_models": [],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "1SAC200372W0001",
+   "abb_document_id": "1SAC200372W0001",
+   "title": "Novolink with Siemens PLC",
+   "category": "motor_protection",
+   "doc_type": "application_guide",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SAC200372W0001_Application Guide_integrating Novolink in Siemens PLC.pdf",
+   "library_path": "AF38-30-00-13/1SAC200372W0001_Application Guide_integrating Novolink in Siemens PLC.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 32,
+   "bytes": 12918549,
+   "sha256": "0dfaca06ceb6353b3e53f27411faa49a5418694a90f91a3726b2b687996e10f0",
+   "published": "2024-02-27",
+   "covers_models": [
+    "AF09"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SAC200372W0001-DE",
+   "abb_document_id": "1SAC200372W0001",
+   "title": "Application guide 1SAC200372W0001",
+   "category": "motor_protection",
+   "doc_type": "application_guide",
+   "revision": "A",
+   "language": "de",
+   "file_name": "1SAC200372W0001_Rev_A_Novolink_m_Siemens_SPS_DE_HB_0524_Web.pdf",
+   "library_path": "AF38-30-00-13/1SAC200372W0001_Rev_A_Novolink_m_Siemens_SPS_DE_HB_0524_Web.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 32,
+   "bytes": 2362975,
+   "sha256": "e5ef7acbfdfa8d6c9e30ba8233000766bab0fc2a62d0226934bce63ac345a71c",
+   "published": "2024-05-02",
+   "covers_models": [
+    "AF09"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC100195C0203",
+   "abb_document_id": "1SBC100195C0203",
+   "title": "Motor protection and control",
+   "category": "motor_protection",
+   "doc_type": "catalog",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SBC100195C0203_Short_form_motor_protection_ control_edition_november2016.pdf",
+   "library_path": "AF38-30-00-13/1SBC100195C0203_Short_form_motor_protection_ control_edition_november2016.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 202,
+   "bytes": 35301038,
+   "sha256": "fbb25fec3c3c1800fb9a913f981395223652a2c37fa922c13f488c21b347a8c7",
+   "published": "2016-11-14",
+   "covers_models": [
+    "MS132",
+    "AF09",
+    "MS116",
+    "AF116",
+    "AF40",
+    "AF140",
+    "AF80",
+    "AF370",
+    "AF26",
+    "AF190",
+    "AF16",
+    "AF38",
+    "MS165",
+    "AF205",
+    "AF52",
+    "AF265",
+    "AF96",
+    "AF146",
+    "AF65",
+    "AF305",
+    "AF12",
+    "AF400",
+    "AF30",
+    "AF750",
+    "AF2650"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC100212C0203",
+   "abb_document_id": "1SBC100212C0203",
+   "title": "Just push it",
+   "category": "motor_protection",
+   "doc_type": "catalog",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SBC100212C0203_Push-in Spring catalog_2023_HD.pdf",
+   "library_path": "AF38-30-00-13/1SBC100212C0203_Push-in Spring catalog_2023_HD.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 106,
+   "bytes": 30123740,
+   "sha256": "5f4ea6e81cebf98aff0de77cf094e77c612e8d8c454ce15ffe953ad7441b37fb",
+   "published": "2023-07-13",
+   "covers_models": [
+    "AF09",
+    "MS132",
+    "AF38",
+    "AF16",
+    "AF26",
+    "AF30",
+    "AF12",
+    "MS116",
+    "MS165",
+    "AF96",
+    "AF40",
+    "AF65",
+    "AF80"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC100214C0202",
+   "abb_document_id": "1SBC100214C0202",
+   "title": "Motor protection and control - main catalog 2024",
+   "category": "motor_protection",
+   "doc_type": "catalog",
+   "revision": "2024",
+   "language": "en",
+   "file_name": "1SBC100214C0202_Motor_protection_and_control_03_2024.pdf",
+   "library_path": "AF38-30-00-13/1SBC100214C0202_Motor_protection_and_control_03_2024.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1052,
+   "bytes": 252138185,
+   "sha256": "6b18a657a1688164e98003867ccd6c70a59505d26dd3843365d5080b29bbb530",
+   "published": "2024-02-05",
+   "covers_models": [
+    "AF38",
+    "AF09",
+    "AF40",
+    "MS165",
+    "AF370",
+    "AF26",
+    "AF65",
+    "AF190",
+    "AF80",
+    "AF116",
+    "AF205",
+    "AF265",
+    "AF140",
+    "AF305",
+    "AF16",
+    "AF52",
+    "AF96",
+    "MS132",
+    "AF400",
+    "AF460",
+    "UMC100",
+    "AF750",
+    "AF580",
+    "MS116",
+    "AF2850"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101026M6801",
+   "abb_document_id": "1SBC101026M6801",
+   "title": "Installation instruction 1SBC101026M6801",
+   "category": "motor_protection",
+   "doc_type": "installation_instruction",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SBC101026M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101026M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 4695752,
+   "sha256": "dbea736688da1b484fa106e0a02d52f08b5ef37a0a1f17ae100e1051165bc37c",
+   "published": "2022-10-14",
+   "covers_models": [
+    "AF09",
+    "AF26"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101027M6801",
+   "abb_document_id": "1SBC101027M6801",
+   "title": "Installation instruction 1SBC101027M6801",
+   "category": "motor_protection",
+   "doc_type": "installation_instruction",
+   "revision": "N",
+   "language": "en",
+   "file_name": "1SBC101027M6801_Online_N.pdf",
+   "library_path": "AF38-30-00-13/1SBC101027M6801_Online_N.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 5,
+   "bytes": 9739730,
+   "sha256": "175b6698bceaa94f914ed810d38a8a60c0462fa07a845397d7d8b0fc84193efe",
+   "published": "2025-12-03",
+   "covers_models": [
+    "MS116",
+    "AF26"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101028M6801",
+   "abb_document_id": "1SBC101028M6801",
+   "title": "Technical document 1SBC101028M6801",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "de",
+   "file_name": "1SBC101028M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101028M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 7959918,
+   "sha256": "c6284381ea8c6b8b52b50f99a789c76f32a7e7ae6c248c9dbdec46845be4a550",
+   "published": "2019-05-03",
+   "covers_models": [
+    "AF09",
+    "AF26",
+    "AF16"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101029M6801",
+   "abb_document_id": "1SBC101029M6801",
+   "title": "Technical document 1SBC101029M6801",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "de",
+   "file_name": "1SBC101029M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101029M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 6244503,
+   "sha256": "7745532ce7861f7a113995a7405135979b044b63243042610a90556b6e42e342",
+   "published": "2018-04-20",
+   "covers_models": [
+    "AF09",
+    "AF26",
+    "AF16",
+    "AF38"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101030M6801",
+   "abb_document_id": "1SBC101030M6801",
+   "title": "Technical document 1SBC101030M6801",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SBC101030M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101030M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 991558,
+   "sha256": "90962f2049bfede55db4dab92b57cd8de5ee38d23e528f79ae3d001af62e5c84",
+   "published": "2016-02-08",
+   "covers_models": [
+    "MS132",
+    "AF09",
+    "MS116",
+    "AF26"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101031M6801",
+   "abb_document_id": "1SBC101031M6801",
+   "title": "Technical document 1SBC101031M6801",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "de",
+   "file_name": "1SBC101031M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101031M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 3400028,
+   "sha256": "5b20a07f028d34dc7a687782787bdb3429314f9722bb29edc2d4d0a817411a36",
+   "published": "2018-04-20",
+   "covers_models": [
+    "AF09"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101035M6801",
+   "abb_document_id": "1SBC101035M6801",
+   "title": "Installation instruction 1SBC101035M6801",
+   "category": "motor_protection",
+   "doc_type": "installation_instruction",
+   "revision": "F",
+   "language": "en",
+   "file_name": "1SBC101035M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101035M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 4,
+   "bytes": 5085979,
+   "sha256": "ccab32d92e0e8178d9d1b761fbc1c8cad1d78d4dae3045641fa6bed66893bbba",
+   "published": "2021-12-03",
+   "covers_models": [
+    "AF09",
+    "AF26"
+   ],
+   "identity_source": "file name; revision from document text; date: printed revision date"
+  },
+  {
+   "doc_key": "1SBC101037M6801",
+   "abb_document_id": "1SBC101037M6801",
+   "title": "Contactors AF..B, contactor relays NF..B and accessories",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SBC101037M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101037M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 1214219,
+   "sha256": "c1966d2593615024f42b763d3cabc66ab37ff6b1bfcf011ce45dc0f0d4a1d337",
+   "published": "2016-03-04",
+   "covers_models": [
+    "AF09",
+    "AF26",
+    "AF38",
+    "AF30",
+    "AF16"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101041M6801",
+   "abb_document_id": "1SBC101041M6801",
+   "title": "Technical document 1SBC101041M6801",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "de",
+   "file_name": "1SBC101041M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101041M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 1334794,
+   "sha256": "a8081a1a15e05aebd91f2db5988b2a29b962a356880ea431f17d13efcddb4e30",
+   "published": "2013-01-07",
+   "covers_models": [
+    "AF09",
+    "AF40",
+    "AF26",
+    "AF80"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101042M6801",
+   "abb_document_id": "1SBC101042M6801",
+   "title": "Technical document 1SBC101042M6801",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "de",
+   "file_name": "1SBC101042M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101042M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 638615,
+   "sha256": "de1f861b7759b484f41162abb5b6aed28121020638690a0dee30d6f5d93a5f91",
+   "published": "2018-07-02",
+   "covers_models": [
+    "AF09",
+    "AF80",
+    "AF40"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101046M6801",
+   "abb_document_id": "1SBC101046M6801",
+   "title": "Technical document 1SBC101046M6801",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SBC101046M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101046M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 790995,
+   "sha256": "730dda8c73e8a414c21f7668febde7cd2f2cd2548ec6b1daa41aef72887224e7",
+   "published": "2016-05-25",
+   "covers_models": [
+    "AF40",
+    "AF09",
+    "AF80",
+    "AF26"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101051M6801",
+   "abb_document_id": "1SBC101051M6801",
+   "title": "Technical document 1SBC101051M6801",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "de",
+   "file_name": "1SBC101051M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101051M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 493874,
+   "sha256": "736d06fb1d40390762626c263e7a3aaac8ee994c16ddcb455803be9f7d2a843c",
+   "published": "2015-09-25",
+   "covers_models": [
+    "AF09",
+    "AF40"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101052M6801",
+   "abb_document_id": "1SBC101052M6801",
+   "title": "Installation instruction 1SBC101052M6801",
+   "category": "motor_protection",
+   "doc_type": "installation_instruction",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SBC101052M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101052M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 4,
+   "bytes": 4674488,
+   "sha256": "12e9b87a21f0b7d4205b0f96db6aa6fba4d2737bdc6376d28ef84104b90a1622",
+   "published": "2021-12-14",
+   "covers_models": [],
+   "identity_source": "file name; revision from document text; date: printed revision date"
+  },
+  {
+   "doc_key": "1SBC101053M6801",
+   "abb_document_id": "1SBC101053M6801",
+   "title": "Installation instruction 1SBC101053M6801",
+   "category": "motor_protection",
+   "doc_type": "installation_instruction",
+   "revision": "C",
+   "language": "en",
+   "file_name": "1SBC101053M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101053M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 4,
+   "bytes": 4690256,
+   "sha256": "a9bbac79d97a1f2a1415afa41f41bb6f5831ef1fd392683a8a07292465b5bbfc",
+   "published": "2021-12-14",
+   "covers_models": [
+    "AF09",
+    "AF26"
+   ],
+   "identity_source": "file name; revision from document text; date: printed revision date"
+  },
+  {
+   "doc_key": "1SBC101054M6801",
+   "abb_document_id": "1SBC101054M6801",
+   "title": "Installation instruction 1SBC101054M6801",
+   "category": "motor_protection",
+   "doc_type": "installation_instruction",
+   "revision": "G",
+   "language": "en",
+   "file_name": "1SBC101054M6801_Online_G.pdf",
+   "library_path": "AF38-30-00-13/1SBC101054M6801_Online_G.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 4,
+   "bytes": 10494237,
+   "sha256": "4c4bbd2e5b8c266ac800ac7433d79f34ef522f9de1668ab36dca55269d3aa8ef",
+   "published": "2025-12-01",
+   "covers_models": [
+    "AF09",
+    "AF26"
+   ],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SBC101055M6801",
+   "abb_document_id": "1SBC101055M6801",
+   "title": "Technical document 1SBC101055M6801",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "de",
+   "file_name": "1SBC101055M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101055M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 1737158,
+   "sha256": "7f60479a405244de2fdb5b983692d20110ee154e389fc17042efa421e378157a",
+   "published": "2018-09-06",
+   "covers_models": [
+    "MS132",
+    "AF09"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101056M6801",
+   "abb_document_id": "1SBC101056M6801",
+   "title": "Technical document 1SBC101056M6801",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "de",
+   "file_name": "1SBC101056M6801_BER_Complete.pdf",
+   "library_path": "AF38-30-00-13/1SBC101056M6801_BER_Complete.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 22563183,
+   "sha256": "f0f14dd337892cc054978e0c7524c095e215b429459353a7fe9605818f6682f6",
+   "published": "2020-10-06",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101057M6801",
+   "abb_document_id": "1SBC101057M6801",
+   "title": "Technical document 1SBC101057M6801",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "de",
+   "file_name": "1SBC101057M6801_BEY_Complete.pdf",
+   "library_path": "AF38-30-00-13/1SBC101057M6801_BEY_Complete.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 17236469,
+   "sha256": "a2b25246a988f49f2ab15ca01b9b0d9f4a70746df83eb4a81bce961431476aa0",
+   "published": "2020-10-06",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101065M6801",
+   "abb_document_id": "1SBC101065M6801",
+   "title": "Installation instruction 1SBC101065M6801",
+   "category": "motor_protection",
+   "doc_type": "installation_instruction",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SBC101065M6801 06-21.pdf",
+   "library_path": "AF38-30-00-13/1SBC101065M6801 06-21.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 10388713,
+   "sha256": "856325beeb60821e832ea090c4e14afc13fa6a2204c999fa1ae28a7613fc7f46",
+   "published": "2021-06-09",
+   "covers_models": [
+    "MS132"
+   ],
+   "identity_source": "file name; revision from document text; date: printed revision date"
+  },
+  {
+   "doc_key": "1SBC101066M6801",
+   "abb_document_id": "1SBC101066M6801",
+   "title": "Adapting plate for R30 contactors",
+   "category": "motor_protection",
+   "doc_type": "installation_instruction",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SBC101066M6801.pdf",
+   "library_path": "AF38-30-00-13/1SBC101066M6801.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 4,
+   "bytes": 27276213,
+   "sha256": "c742af3cbf0ff4ae22c859f39a2310f248f0218c8db85ab254ae790026bafc01",
+   "published": "2021-07-09",
+   "covers_models": [
+    "MS132",
+    "MS116",
+    "AF09"
+   ],
+   "identity_source": "file name; revision from document text; date: printed revision date"
+  },
+  {
+   "doc_key": "1SBC101080M6801",
+   "abb_document_id": "1SBC101080M6801",
+   "title": "SAFETY INSTRUCTION",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SBC101080M6801_A.pdf",
+   "library_path": "AF38-30-00-13/1SBC101080M6801_A.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 7,
+   "bytes": 913117,
+   "sha256": "b351733f932d2d2430f31ea56294ce2c4aabc82033ad62268141bb1fd87b5fb0",
+   "published": "2024-05-28",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101435D0201",
+   "abb_document_id": "1SBC101435D0201",
+   "title": "APPLICATION NOTE - SEMI F47 COMPLIANCE",
+   "category": "motor_protection",
+   "doc_type": "application_note",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SBC101435D0201_Rev A_SEMI F47 application.pdf",
+   "library_path": "AF38-30-00-13/1SBC101435D0201_Rev A_SEMI F47 application.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 352578,
+   "sha256": "7c4742983f885b5b634bcc5185342b26d3ca249e6ae4f1d80ed7380d5f760bc4",
+   "published": "2020-05-19",
+   "covers_models": [
+    "AF40",
+    "AF750"
+   ],
+   "identity_source": "file name; revision from document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBC101438D0201",
+   "abb_document_id": "1SBC101438D0201",
+   "title": "Installation instruction 1SBC101438D0201",
+   "category": "motor_protection",
+   "doc_type": "installation_instruction",
+   "revision": "C",
+   "language": "en",
+   "file_name": "1SBC101438D0201.pdf",
+   "library_path": "AF38-30-00-13/1SBC101438D0201.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 15,
+   "bytes": 5860333,
+   "sha256": "c537e5196a490ff29672147c3352dc444adfad608fb9eb5db86b096537a36ffb",
+   "published": "2018-02-16",
+   "covers_models": [
+    "AF09",
+    "AF16",
+    "AF38",
+    "AF26",
+    "AF96",
+    "AF30",
+    "AF12",
+    "AF40",
+    "AF65",
+    "AF80",
+    "MS116",
+    "MS132",
+    "MS165",
+    "AF52"
+   ],
+   "identity_source": "file name; revision from document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SBD250143E1000",
+   "abb_document_id": "1SBD250143E1000",
+   "title": "Technical document 1SBD250143E1000",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SBD250143E1000.pdf",
+   "library_path": "AF38-30-00-13/1SBD250143E1000.pdf",
+   "bundles": [
+    "AF38-30-00-13"
+   ],
+   "alternate_copies": [],
+   "n_pages": 3,
+   "bytes": 46557,
+   "sha256": "e9c68d6c82ae2f54fccc59a6d73f3e899209af0fe625a2abd238d424ee6f60f7",
+   "published": "2009-07-31",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SAC200332H0001",
+   "abb_document_id": "1SAC200332H0001",
+   "title": "Technical document 1SAC200332H0001",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SAC200332H0001_Rev_A_End_of_life_MS132_MO132.pdf",
+   "library_path": "MS132-10T/1SAC200332H0001_Rev_A_End_of_life_MS132_MO132.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 7,
+   "bytes": 3629779,
+   "sha256": "3f249729c6c9e21efa235eaeaa2f170b2355c636ec879c6e871c84098bd15562",
+   "published": "2024-01-24",
+   "covers_models": [
+    "MS132"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SAC200333H0001",
+   "abb_document_id": "1SAC200333H0001",
+   "title": "Technical document 1SAC200333H0001",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SAC200333H0001_Rev_A_End_of_life_MS132-K.pdf",
+   "library_path": "MS132-10T/1SAC200333H0001_Rev_A_End_of_life_MS132-K.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 4,
+   "bytes": 2378680,
+   "sha256": "d968e1db25e80ee070e20de639faac554a6222ac2165cd4fc49b47eccdd048a5",
+   "published": "2024-01-24",
+   "covers_models": [
+    "MS132"
+   ],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SAM300517F0001",
+   "abb_document_id": "1SAM300517F0001",
+   "title": "Drawing 1SAM300517F0001",
+   "category": "motor_protection",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SAM300517F0001.pdf",
+   "library_path": "MS132-10T/1SAM300517F0001.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 1427792,
+   "sha256": "3c34e6802a515ecdeb0658bc836f287227b33a82e8d8e0966b4bee604ce53303",
+   "published": "2020-06-25",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SAM300518F0001",
+   "abb_document_id": "1SAM300518F0001",
+   "title": "Drawing 1SAM300518F0001",
+   "category": "motor_protection",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SAM300518F0001.pdf",
+   "library_path": "MS132-10T/1SAM300518F0001.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 97877,
+   "sha256": "7f27b02051017508af7966154affdefc5279fb4a81209ab3791928c67e92cc3e",
+   "published": "2014-01-28",
+   "covers_models": [
+    "MS132"
+   ],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SAM300535F0001",
+   "abb_document_id": "1SAM300535F0001",
+   "title": "Drawing 1SAM300535F0001",
+   "category": "motor_protection",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SAM300535F0001.pdf",
+   "library_path": "MS132-10T/1SAM300535F0001.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 600181,
+   "sha256": "d6be5b4bcf83018ea7fede4d6c5b25bddc351a5acdbca54eeffe8b4420245f24",
+   "published": "2013-11-12",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SAM300535F0004",
+   "abb_document_id": "1SAM300535F0004",
+   "title": "Drawing 1SAM300535F0004",
+   "category": "motor_protection",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SAM300535F0004.pdf",
+   "library_path": "MS132-10T/1SAM300535F0004.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 87761,
+   "sha256": "db312f6a19a7ccab0dc27a729687bfa0ddc9cedc8b5f07940449f01783e36950",
+   "published": "2014-07-07",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SAM300535F0005",
+   "abb_document_id": "1SAM300535F0005",
+   "title": "Drawing 1SAM300535F0005",
+   "category": "motor_protection",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SAM300535F0005.pdf",
+   "library_path": "MS132-10T/1SAM300535F0005.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 87310,
+   "sha256": "339bcba01c29395dc157a2dd9623b4e8f27b1a0db402579c92347de0f69563c0",
+   "published": "2014-07-07",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SAM300535F0006",
+   "abb_document_id": "1SAM300535F0006",
+   "title": "Drawing 1SAM300535F0006",
+   "category": "motor_protection",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SAM300535F0006.pdf",
+   "library_path": "MS132-10T/1SAM300535F0006.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 87611,
+   "sha256": "76df427b61aaaecf5072efe4533bb1d1266acfe5451ab565a58d9f68df0ee3e3",
+   "published": "2014-07-07",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SAM300535F0011",
+   "abb_document_id": "1SAM300535F0011",
+   "title": "Drawing 1SAM300535F0011",
+   "category": "motor_protection",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SAM300535F0011.pdf",
+   "library_path": "MS132-10T/1SAM300535F0011.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 120699,
+   "sha256": "86178c02d93ece89bb68bdf3b2131bdd502a15c983535caf31937ef98e4fd745",
+   "published": "2014-07-07",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SAM300535F0101",
+   "abb_document_id": "1SAM300535F0101",
+   "title": "Drawing 1SAM300535F0101",
+   "category": "motor_protection",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SAM300535F0101.pdf",
+   "library_path": "MS132-10T/1SAM300535F0101.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 89326,
+   "sha256": "5dd41f7be760bd374dd11d053ee62c689b95e4ccec76f20091ad04fc81cbd0e8",
+   "published": "2014-06-16",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SAM300535F0103",
+   "abb_document_id": "1SAM300535F0103",
+   "title": "Drawing 1SAM300535F0103",
+   "category": "motor_protection",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SAM300535F0103.pdf",
+   "library_path": "MS132-10T/1SAM300535F0103.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 123445,
+   "sha256": "18886dd6d2d8c325f343c83445c23c5e9ee1e498e75d2c4ccf9d8e2e1caefdb0",
+   "published": "2014-06-16",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "2CDC131057M6801",
+   "abb_document_id": "2CDC131057M6801",
+   "title": "Installation instruction 2CDC131057M6801",
+   "category": "motor_protection",
+   "doc_type": "installation_instruction",
+   "revision": "L",
+   "language": "en",
+   "file_name": "2CDC131057M6801_L_Installation Instructions - Circuit breaker for transformer protection MS132-T.pdf",
+   "library_path": "MS132-10T/2CDC131057M6801_L_Installation Instructions - Circuit breaker for transformer protection MS132-T.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 5,
+   "bytes": 5903823,
+   "sha256": "bdf97039dcf3b2d9ca82cd9a48c18df059ace3f8e78ebe69b3645eea0f174101",
+   "published": "2026-03-03",
+   "covers_models": [
+    "MS132"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "2CDC131058D0201",
+   "abb_document_id": "2CDC131058D0201",
+   "title": "Data sheet - circuit breakers for transformer protection MS132-T / MS132-KT",
+   "category": "motor_protection",
+   "doc_type": "data_sheet",
+   "revision": "D",
+   "language": "en",
+   "file_name": "2CDC131058D0201d_MS132T-MS132KT.pdf",
+   "library_path": "MS132-10T/2CDC131058D0201d_MS132T-MS132KT.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 8,
+   "bytes": 1267250,
+   "sha256": "d6b6130136ecb7509594fcfa128395170da76d58c8533e42130ee33a3df14c33",
+   "published": "2021-03-01",
+   "covers_models": [
+    "MS132",
+    "MS132-12T"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "2CDC131062C0201",
+   "abb_document_id": "2CDC131062C0201",
+   "title": "MS116 manual motor starters",
+   "category": "motor_protection",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "en",
+   "file_name": "2CDC131062C0201.pdf",
+   "library_path": "MS132-10T/2CDC131062C0201.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 11,
+   "bytes": 2298936,
+   "sha256": "2eab14c7bce09cab801d84264f140bae8393ea4d52e2a99ab9a99b56f46fb0da",
+   "published": "2013-11-08",
+   "covers_models": [
+    "MS132",
+    "MS116",
+    "MS132-1.6T",
+    "MS132-16T"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "2CDC131111D0201",
+   "abb_document_id": "2CDC131111D0201",
+   "title": "Selection table - circuit breakers for transformer protection MS132-T / MS132-KT",
+   "category": "motor_protection",
+   "doc_type": "selection_table",
+   "revision": null,
+   "language": "en",
+   "file_name": "2CDC131111D0201_SelectionTable_MS132-(K)T.pdf",
+   "library_path": "MS132-10T/2CDC131111D0201_SelectionTable_MS132-(K)T.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 2,
+   "bytes": 249782,
+   "sha256": "02ee5f9616dae71c46274b87331fbdce879a5fa7fa06a01cf7d63ed05ebb056a",
+   "published": "2017-05-29",
+   "covers_models": [
+    "MS132-10T",
+    "MS132-0.63T",
+    "MS132-1.0T",
+    "MS132-1.6T"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "2CDC131158M6801",
+   "abb_document_id": "2CDC131158M6801",
+   "title": "Installation instruction 2CDC131158M6801",
+   "category": "motor_protection",
+   "doc_type": "installation_instruction",
+   "revision": "G",
+   "language": "en",
+   "file_name": "2CDC131158M6801_G_Installation Instructions - Circuit breaker for transformer protection MS132-KT.pdf",
+   "library_path": "MS132-10T/2CDC131158M6801_G_Installation Instructions - Circuit breaker for transformer protection MS132-KT.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 6,
+   "bytes": 7519276,
+   "sha256": "03c33eb10db55063d6cfb69e9584b80abacc4b213b66f3140f617a3bf39bec3e",
+   "published": "2026-03-19",
+   "covers_models": [
+    "MS132"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "2CDC131183M0201",
+   "abb_document_id": "2CDC131183M0201",
+   "title": "Manual motor starters- high temperatures and group mounting",
+   "category": "motor_protection",
+   "doc_type": "installation_instruction",
+   "revision": "A",
+   "language": "en",
+   "file_name": "2CDC131183M0201_A_application_note_MMS_temp.pdf",
+   "library_path": "MS132-10T/2CDC131183M0201_A_application_note_MMS_temp.pdf",
+   "bundles": [
+    "MS132-10T"
+   ],
+   "alternate_copies": [],
+   "n_pages": 8,
+   "bytes": 8079974,
+   "sha256": "0a45582871ffaa07c275d4ba9d7530afb32513d7ea76f1ff11fdc836a4cb6a63",
+   "published": "2022-03-24",
+   "covers_models": [
+    "MS116",
+    "MS132",
+    "MS165"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536105G1004",
+   "abb_document_id": "1SFB536105G1004",
+   "title": "Drawing 1SFB536105G1004",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFB536105G1004_Rev A.pdf",
+   "library_path": "PSR25-600-70/1SFB536105G1004_Rev A.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 37782,
+   "sha256": "42b552b0dfbac9b3519a5c9fee5a091c4a9c098307a0e4c5fd2857a0e84a19fe",
+   "published": "2006-04-12",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536105G1005",
+   "abb_document_id": "1SFB536105G1005",
+   "title": "Drawing 1SFB536105G1005",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFB536105G1005_Rev B.pdf",
+   "library_path": "PSR25-600-70/1SFB536105G1005_Rev B.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 39436,
+   "sha256": "dd7c83a0d5d9d244f2828149f93ba161dadc181bd430a0858fa846192176778e",
+   "published": "2006-07-26",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536105G1006",
+   "abb_document_id": "1SFB536105G1006",
+   "title": "Drawing 1SFB536105G1006",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFB536105G1006_Rev B.pdf",
+   "library_path": "PSR25-600-70/1SFB536105G1006_Rev B.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 64863,
+   "sha256": "581350d70ccf0826462d9aa3cb65d0c6bf470d0a0f743aaaf8895414579c515d",
+   "published": "2006-07-26",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536105G1010",
+   "abb_document_id": "1SFB536105G1010",
+   "title": "The information contained in this document is to be kept strictly",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": "B",
+   "language": "en",
+   "file_name": "1SFB536105G1010,B.pdf",
+   "library_path": "PSR25-600-70/1SFB536105G1010,B.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 53322,
+   "sha256": "91c76e65d71f829503564d08fd618bf99ba6715f14064a13291f4b0595ce9308",
+   "published": "2013-09-13",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536105G1011",
+   "abb_document_id": "1SFB536105G1011",
+   "title": "The information contained in this document is to be kept strictly",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": "C",
+   "language": "en",
+   "file_name": "1SFB536105G1011,C.pdf",
+   "library_path": "PSR25-600-70/1SFB536105G1011,C.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 57649,
+   "sha256": "e9b0096841a063af7e29f70b1c9281322a1087c1fa30de150a01c39b46f66652",
+   "published": "2013-09-13",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536105G1012",
+   "abb_document_id": "1SFB536105G1012",
+   "title": "Drawing 1SFB536105G1012",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": "B",
+   "language": "en",
+   "file_name": "1SFB536105G1012,B.pdf",
+   "library_path": "PSR25-600-70/1SFB536105G1012,B.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 67093,
+   "sha256": "074901efccc0dbbfc9623206b1814d243b53ac0fee0512110625125be9130b62",
+   "published": null,
+   "covers_models": [],
+   "identity_source": "file name; date: none"
+  },
+  {
+   "doc_key": "1SFB536105G1018",
+   "abb_document_id": "1SFB536105G1018",
+   "title": "Drawing 1SFB536105G1018",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SFB536105G1018,A.pdf",
+   "library_path": "PSR25-600-70/1SFB536105G1018,A.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 38043,
+   "sha256": "ce1ab7ec4de83569da22e7f36f20905fae9833103a6d431c7de0132869f270ba",
+   "published": null,
+   "covers_models": [],
+   "identity_source": "file name; date: none"
+  },
+  {
+   "doc_key": "1SFB536147G1202",
+   "abb_document_id": "1SFB536147G1202",
+   "title": "Drawing 1SFB536147G1202",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFB536147G1202_Rev B.pdf",
+   "library_path": "PSR25-600-70/1SFB536147G1202_Rev B.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 125281,
+   "sha256": "f67f19d53414190ccf7f293b0fd6c382b960e1ffb8886c073cb3052d600863e0",
+   "published": "2006-07-19",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536147G1211",
+   "abb_document_id": "1SFB536147G1211",
+   "title": "Drawing 1SFB536147G1211",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFB536147G1211.pdf",
+   "library_path": "PSR25-600-70/1SFB536147G1211.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 63392,
+   "sha256": "364cb80d095f1eb5738eb073fed20b15676556559f32b89af10d6b8a7d41680b",
+   "published": "2010-02-22",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132031M0001",
+   "abb_document_id": "1SFC132031M0001",
+   "title": "PSR softstarters installation and operating instruction",
+   "category": "softstarters",
+   "doc_type": "installation_instruction",
+   "revision": "I",
+   "language": "en",
+   "file_name": "1SFC132031M0001,I.pdf",
+   "library_path": "PSR25-600-70/1SFC132031M0001,I.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 6,
+   "bytes": 4384145,
+   "sha256": "0484df0c910add14a1ef8bd48d9608a3d41d88f865f7d0e94445cc72005dcc1a",
+   "published": "2013-12-11",
+   "covers_models": [
+    "PSR25",
+    "PSR30"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132032D0201",
+   "abb_document_id": "1SFC132032D0201",
+   "title": "Coordination table: PSR Softstarter with Manuel Motor Starter",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFC132032D0201.pdf",
+   "library_path": "PSR25-600-70/1SFC132032D0201.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 61131,
+   "sha256": "60e9ae92b620e8c8a6bfa62e41ddc4a9310e9ca81b4981fed6d96a3f8b279895",
+   "published": "2006-04-24",
+   "covers_models": [
+    "MS116",
+    "PSR3"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132033D0201",
+   "abb_document_id": "1SFC132033D0201",
+   "title": "Coordination table: PSR Softstarter with gG-Fuse",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFC132033D0201.pdf",
+   "library_path": "PSR25-600-70/1SFC132033D0201.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 65672,
+   "sha256": "4408b6d551ebd8bb065a5d0d3ce02e40dc3a399ca50cc23076df6b759de4118b",
+   "published": "2006-04-24",
+   "covers_models": [
+    "PSR3"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132033M0201",
+   "abb_document_id": "1SFC132033M0201",
+   "title": "Technical document 1SFC132033M0201",
+   "category": "softstarters",
+   "doc_type": "technical_document",
+   "revision": "B",
+   "language": "en",
+   "file_name": "1SFC132033M0201_Rev_B.pdf",
+   "library_path": "PSR25-600-70/1SFC132033M0201_Rev_B.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 4,
+   "bytes": 4235620,
+   "sha256": "bc31ca20d986d18bf88fbafd5522d755cfd073c92f07f6e3887dbe2930216966",
+   "published": "2010-10-25",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132037D0201",
+   "abb_document_id": "1SFC132037D0201",
+   "title": "Coordination table: PSR Softstarter with Manuel Motor Starter",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFC132037D0201.pdf",
+   "library_path": "PSR25-600-70/1SFC132037D0201.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 83946,
+   "sha256": "f0fe9936989ff9ff61717caa315e5f208c6bb86e427f35cb5df97beb82bdbaaa",
+   "published": "2006-04-24",
+   "covers_models": [
+    "MS116",
+    "PSR3"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132038D0201",
+   "abb_document_id": "1SFC132038D0201",
+   "title": "Technical document 1SFC132038D0201",
+   "category": "softstarters",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFC132038D0201.pdf",
+   "library_path": "PSR25-600-70/1SFC132038D0201.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 3,
+   "bytes": 34266,
+   "sha256": "f30ffb5921044e4287c86b1c0f9169bf6676bae4a5a3c14daa1a501dbc90cbd7",
+   "published": "2012-03-07",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132038M0001",
+   "abb_document_id": "1SFC132038M0001",
+   "title": "Technical document 1SFC132038M0001",
+   "category": "softstarters",
+   "doc_type": "technical_document",
+   "revision": "E",
+   "language": "en",
+   "file_name": "1SFC132038M0001_PSR25-30_24VDC_Rev_E_2009-05-13.pdf",
+   "library_path": "PSR25-600-70/1SFC132038M0001_PSR25-30_24VDC_Rev_E_2009-05-13.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 4,
+   "bytes": 1874686,
+   "sha256": "4cdc8c70054b05c975424302505f027fc56d8c9bd2c0d5ba6ece48f72861883d",
+   "published": "2008-12-02",
+   "covers_models": [
+    "PSR25"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132077M9901",
+   "abb_document_id": "1SFC132077M9901",
+   "title": "SE-721 61 Vasteras Sweden",
+   "category": "softstarters",
+   "doc_type": "technical_document",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SFC132077M9901,A.pdf",
+   "library_path": "PSR25-600-70/1SFC132077M9901,A.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 6,
+   "bytes": 4400080,
+   "sha256": "5ef163710f831e5271f70991d236d4feba245fd8651674aab37fb3c15cd459b5",
+   "published": "2013-12-11",
+   "covers_models": [
+    "PSR25",
+    "PSR30"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132039D0201",
+   "abb_document_id": "1SFC132039D0201",
+   "title": "Number of starts per hour using PSR softstarters",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": null,
+   "language": "en",
+   "file_name": "PSR StartsPerHour.pdf",
+   "library_path": "PSR25-600-70/PSR StartsPerHour.pdf",
+   "bundles": [
+    "PSR25-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 13209,
+   "sha256": "31b127e75a5337efd7d14331df75cd760cc075975a8414a20f061e1858a164fc",
+   "published": "2007-02-20",
+   "covers_models": [
+    "PSR45",
+    "PSR25",
+    "PSR30",
+    "PSR37",
+    "PSR16",
+    "PSR9",
+    "PSR12",
+    "PSR6"
+   ],
+   "identity_source": "document text; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132012C0201",
+   "abb_document_id": "1SFC132012C0201",
+   "title": "Softstarters PSR, PSRC, PSE and PSTX catalog",
+   "category": "softstarters",
+   "doc_type": "catalog",
+   "revision": "J",
+   "language": "en",
+   "file_name": "SoftstarterCatalog_1SFC132012C0201_revJ.pdf",
+   "library_path": "PSR25-600-70/SoftstarterCatalog_1SFC132012C0201_revJ.pdf",
+   "bundles": [
+    "PSR25-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/SoftstarterCatalog_1SFC132012C0201_revJ.pdf"
+   ],
+   "n_pages": 80,
+   "bytes": 18861766,
+   "sha256": "e6266d7b043bb821e60892d3097718a80751d5e52ced4a176da39269cff8c1a0",
+   "published": "2026-02-23",
+   "covers_models": [
+    "PSR3",
+    "PSR60",
+    "PSR105",
+    "PSR45",
+    "PSTX1250",
+    "PSTX30",
+    "PSR37",
+    "PSTX470",
+    "PSR25",
+    "PSR30",
+    "PSTX370",
+    "PSTX142",
+    "PSTX210",
+    "PSTX170",
+    "PSTX570",
+    "PSTX720",
+    "PSTX105",
+    "PSTX1050",
+    "MS165",
+    "PSE370",
+    "PSR16",
+    "PSE18",
+    "PSE142",
+    "PSTX840",
+    "PSR12"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132013C0201",
+   "abb_document_id": "1SFC132013C0201",
+   "title": "Softstarter spare parts",
+   "category": "softstarters",
+   "doc_type": "catalog",
+   "revision": "H",
+   "language": "en",
+   "file_name": "SparePart_catalog_1SFC132013C0201_RevH.pdf",
+   "library_path": "PSR25-600-70/SparePart_catalog_1SFC132013C0201_RevH.pdf",
+   "bundles": [
+    "PSR25-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/SparePart_catalog_1SFC132013C0201_RevH.pdf"
+   ],
+   "n_pages": 18,
+   "bytes": 7712496,
+   "sha256": "627bdb7e4596137e72eae3d8c66100f5ce0b1021c64d0347c95e3e8e5d1daf65",
+   "published": "2026-01-07",
+   "covers_models": [
+    "PSTX1250",
+    "PSTX470",
+    "PSTX30",
+    "PSTX370",
+    "PSE370",
+    "PSTX210",
+    "PSTX570",
+    "PSTX720",
+    "PSTX170",
+    "PSTX142",
+    "PSTX1050",
+    "PSE210",
+    "PSTX105",
+    "PSTX840",
+    "PSE18",
+    "PSE142",
+    "PSE170",
+    "PSE105"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536005G5001",
+   "abb_document_id": "1SFB536005G5001",
+   "title": "Drawing 1SFB536005G5001",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": "D",
+   "language": "en",
+   "file_name": "1SFB536005G5001_RevD_PSTXinSideDelta.pdf",
+   "library_path": "PSTX142-600-70/1SFB536005G5001_RevD_PSTXinSideDelta.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFB536005G5001_RevD_PSTXinSideDelta.pdf"
+   ],
+   "n_pages": 1,
+   "bytes": 62830,
+   "sha256": "40a0f8f52d1e6cb050ca47ed1ff60691cd9e228fdf70f96c1ca7d0e77e0b27f2",
+   "published": "2023-11-21",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536005G5002",
+   "abb_document_id": "1SFB536005G5002",
+   "title": "Drawing 1SFB536005G5002",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": "B",
+   "language": "en",
+   "file_name": "1SFB536005G5002_RevB_PSTXOptionalDirection.pdf",
+   "library_path": "PSTX142-600-70/1SFB536005G5002_RevB_PSTXOptionalDirection.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFB536005G5002_RevB_PSTXOptionalDirection.pdf"
+   ],
+   "n_pages": 1,
+   "bytes": 33909,
+   "sha256": "17a103a4fc3915323bb86375eeeec217454e7896c64a51d10af04038de2d020a",
+   "published": "2016-10-19",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536005G5003",
+   "abb_document_id": "1SFB536005G5003",
+   "title": "Drawing 1SFB536005G5003",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": "B",
+   "language": "en",
+   "file_name": "1SFB536005G5003_PSTXOptionalDirection_alternative_RevB.pdf",
+   "library_path": "PSTX142-600-70/1SFB536005G5003_PSTXOptionalDirection_alternative_RevB.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFB536005G5003_PSTXOptionalDirection_alternative_RevB.pdf"
+   ],
+   "n_pages": 1,
+   "bytes": 33201,
+   "sha256": "5737463b308a7453ed32759bf188f548c58add20398a298861e3d8946f97d914",
+   "published": "2016-10-19",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFB536005G5004",
+   "abb_document_id": "1SFB536005G5004",
+   "title": "Drawing 1SFB536005G5004",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": "B",
+   "language": "en",
+   "file_name": "1SFB536005G5004_RevB_PSTXWithPoleChange.pdf",
+   "library_path": "PSTX142-600-70/1SFB536005G5004_RevB_PSTXWithPoleChange.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFB536005G5004_RevB_PSTXWithPoleChange.pdf"
+   ],
+   "n_pages": 1,
+   "bytes": 37570,
+   "sha256": "efcdf16a4079db8ff8484ae2702f85b59655bea8f81a35e10cb60735ebd10e25",
+   "published": "2016-10-20",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536005G5006",
+   "abb_document_id": "1SFB536005G5006",
+   "title": "Drawing 1SFB536005G5006",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": "B",
+   "language": "en",
+   "file_name": "1SFB536005G5006_RevB_PSTXInLineContactorControl.pdf",
+   "library_path": "PSTX142-600-70/1SFB536005G5006_RevB_PSTXInLineContactorControl.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFB536005G5006_RevB_PSTXInLineContactorControl.pdf"
+   ],
+   "n_pages": 1,
+   "bytes": 36734,
+   "sha256": "f9cfa12bf1c40b47d721b48b7a984a21f13a37f09bddbdc5f4589ca3c0ca21c7",
+   "published": "2016-10-19",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536005G5007",
+   "abb_document_id": "1SFB536005G5007",
+   "title": "Drawing 1SFB536005G5007",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": "B",
+   "language": "en",
+   "file_name": "1SFB536005G5007_RevB_PSTXDualMotorstart.pdf",
+   "library_path": "PSTX142-600-70/1SFB536005G5007_RevB_PSTXDualMotorstart.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFB536005G5007_RevB_PSTXDualMotorstart.pdf"
+   ],
+   "n_pages": 1,
+   "bytes": 42181,
+   "sha256": "0bb596ea9fd1304b4f68ec91d8ae1abd4336a9aa463e2faf52a335cae6d6e2ad",
+   "published": "2016-10-19",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536005G5008",
+   "abb_document_id": "1SFB536005G5008",
+   "title": "Drawing 1SFB536005G5008",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": "B",
+   "language": "en",
+   "file_name": "1SFB536005G5008_RevB_PSTXsequenceStart.pdf",
+   "library_path": "PSTX142-600-70/1SFB536005G5008_RevB_PSTXsequenceStart.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFB536005G5008_RevB_PSTXsequenceStart.pdf"
+   ],
+   "n_pages": 2,
+   "bytes": 57572,
+   "sha256": "b7c1c678f1a3916eace33e0d14efe07d215182463a5efaed5e1839b9fac7a807",
+   "published": "2016-10-19",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFB536005G5009",
+   "abb_document_id": "1SFB536005G5009",
+   "title": "Drawing 1SFB536005G5009",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SFB536005G5009_revA_PSTXinSideDelta_with_line_contactor.pdf",
+   "library_path": "PSTX142-600-70/1SFB536005G5009_revA_PSTXinSideDelta_with_line_contactor.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFB536005G5009_revA_PSTXinSideDelta_with_line_contactor.pdf"
+   ],
+   "n_pages": 1,
+   "bytes": 54273,
+   "sha256": "18a34e4092784d3f146156e2c50e39e807f1d06d1edd0bc1fdb29d6ea1605f3e",
+   "published": "2016-10-19",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132081M0201",
+   "abb_document_id": "1SFC132081M0201",
+   "title": "Softstarters type PSTX30...PSTX1250 installation and commissioning manual",
+   "category": "softstarters",
+   "doc_type": "installation_and_commissioning_manual",
+   "revision": "Q",
+   "language": "en",
+   "file_name": "1SFC132081M0201_Rev_Q.pdf",
+   "library_path": "PSTX142-600-70/1SFC132081M0201_Rev_Q.pdf",
+   "bundles": [
+    "PSTX142-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 182,
+   "bytes": 30252571,
+   "sha256": "721328d3c332977f34e2fe1a40a1052ece2f88b77961d3705c03d561c5d35a9f",
+   "published": "2022-04-06",
+   "covers_models": [
+    "PSTX30",
+    "PSTX1250",
+    "PSTX470",
+    "PSTX142",
+    "PSTX1050",
+    "PSTX720",
+    "PSTX210",
+    "PSTX170",
+    "PSTX570",
+    "PSTX840",
+    "PSTX370",
+    "PSTX37",
+    "PSTX45",
+    "PSTX60",
+    "PSTX72",
+    "PSTX85",
+    "PSTX105",
+    "PSTX250",
+    "PSTX300"
+   ],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132082M9901",
+   "abb_document_id": "1SFC132082M9901",
+   "title": "Softstarters type PSTX30...PSTX1250 user manual short form (multilingual)",
+   "category": "softstarters",
+   "doc_type": "user_manual",
+   "revision": "H",
+   "language": "mul",
+   "file_name": "1SFC132082M9901_REV_H.pdf",
+   "library_path": "PSTX142-600-70/1SFC132082M9901_REV_H.pdf",
+   "bundles": [
+    "PSTX142-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 258,
+   "bytes": 50857563,
+   "sha256": "8a4e5a215631d3a3bc366d31c4cc3641d224e3ab9002db564195b6e931889ba7",
+   "published": "2022-01-21",
+   "covers_models": [
+    "PSTX30",
+    "PSTX1250",
+    "PSTX142",
+    "PSTX170",
+    "PSTX570",
+    "PSTX1050",
+    "PSTX210",
+    "PSTX470",
+    "PSTX720"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132091M0201",
+   "abb_document_id": "1SFC132091M0201",
+   "title": "Fieldbus Plug",
+   "category": "softstarters",
+   "doc_type": "fieldbus_manual",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFC132091M0201_PSTX_FBP_Profibus.pdf",
+   "library_path": "PSTX142-600-70/1SFC132091M0201_PSTX_FBP_Profibus.pdf",
+   "bundles": [
+    "PSTX142-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 26,
+   "bytes": 955910,
+   "sha256": "1ff2c63bd9661df2e5059800e533b7de0e1b2f57bce7971fc38b8ff5c46615aa",
+   "published": "2021-03-12",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132096M0201",
+   "abb_document_id": "1SFC132096M0201",
+   "title": "Service instruction",
+   "category": "softstarters",
+   "doc_type": "spare_part_instruction",
+   "revision": "E",
+   "language": "en",
+   "file_name": "1SFC132096M0201 - Replace_SCRs_PSTX30...370_Rev_E.pdf",
+   "library_path": "PSTX142-600-70/1SFC132096M0201 - Replace_SCRs_PSTX30...370_Rev_E.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFC132096M0201 - Replace_SCRs_PSTX30...370_Rev_E.pdf"
+   ],
+   "n_pages": 10,
+   "bytes": 14517820,
+   "sha256": "d9d02656bf0276ea491d67f5360b00b45c1f49ee0229c67c3240197e12763423",
+   "published": "2021-07-15",
+   "covers_models": [
+    "PSTX30",
+    "PSTX370",
+    "PSTX142",
+    "PSTX170",
+    "PSTX210"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132097M0201",
+   "abb_document_id": "1SFC132097M0201",
+   "title": "Installation Instruction",
+   "category": "softstarters",
+   "doc_type": "installation_instruction",
+   "revision": "C",
+   "language": "en",
+   "file_name": "1SFC132097M0201 - Replace the PCBA_rev_C_2021-07-28.pdf",
+   "library_path": "PSTX142-600-70/1SFC132097M0201 - Replace the PCBA_rev_C_2021-07-28.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFC132097M0201 - Replace the PCBA_rev_C_2021-07-28.pdf"
+   ],
+   "n_pages": 4,
+   "bytes": 3881030,
+   "sha256": "d9aca225e4d4e2d56413f0da49c4e64153e0b76d145bb5c2418d5a9ee4ce4579",
+   "published": "2021-07-28",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132102M0201",
+   "abb_document_id": "1SFC132102M0201",
+   "title": "Spare part instruction",
+   "category": "softstarters",
+   "doc_type": "spare_part_instruction",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SFC132102M0201 - Replace the SCR- PSTX470...1250.pdf",
+   "library_path": "PSTX142-600-70/1SFC132102M0201 - Replace the SCR- PSTX470...1250.pdf",
+   "bundles": [
+    "PSTX142-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 8,
+   "bytes": 26725554,
+   "sha256": "db92c5235b12a1559f661f863dcacb10d7fc2264650977ce0dcfdede26882799",
+   "published": "2016-01-05",
+   "covers_models": [
+    "PSTX470",
+    "PSTX1050"
+   ],
+   "identity_source": "file name; revision from document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132104M0201",
+   "abb_document_id": "1SFC132104M0201",
+   "title": "Softstarters Type PSTX30...PSTX370",
+   "category": "softstarters",
+   "doc_type": "application_guide",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SFC132104M0201.pdf",
+   "library_path": "PSTX142-600-70/1SFC132104M0201.pdf",
+   "bundles": [
+    "PSTX142-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 20,
+   "bytes": 5238471,
+   "sha256": "8200281a9242ba7f278559f38d4743e2f739453e8cb7321f19ed123e4fea60f6",
+   "published": "2015-03-01",
+   "covers_models": [
+    "PSTX30",
+    "PSTX370",
+    "PSTX170"
+   ],
+   "identity_source": "file name; revision from document text; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132106M0201",
+   "abb_document_id": "1SFC132106M0201",
+   "title": "Spare part instruction",
+   "category": "softstarters",
+   "doc_type": "spare_part_instruction",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SFC132106M0201 - Replace the Current transformer PSTX30_PSTX370.pdf",
+   "library_path": "PSTX142-600-70/1SFC132106M0201 - Replace the Current transformer PSTX30_PSTX370.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFC132106M0201 - Replace the Current transformer PSTX30_PSTX370.pdf"
+   ],
+   "n_pages": 6,
+   "bytes": 11156654,
+   "sha256": "1aad27c52afca2964e385437fd2fc3feb230d8c8f380850d4f1668a91df16b9e",
+   "published": "2016-01-05",
+   "covers_models": [
+    "PSTX30"
+   ],
+   "identity_source": "file name; revision from document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132109M0201",
+   "abb_document_id": "1SFC132109M0201",
+   "title": "Installation and commissioning manual 1SFC132109M0201",
+   "category": "softstarters",
+   "doc_type": "installation_and_commissioning_manual",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SFC132109M0201 - Replace the bypass contactor PSTX30_PSTX370.pdf",
+   "library_path": "PSTX142-600-70/1SFC132109M0201 - Replace the bypass contactor PSTX30_PSTX370.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFC132109M0201 - Replace the bypass contactor PSTX30_PSTX370.pdf"
+   ],
+   "n_pages": 6,
+   "bytes": 10479372,
+   "sha256": "1652dfc06401f3954ce4c1098157fe817a69aaae1949f0030fe2fd8bec9bd5ea",
+   "published": "2016-01-05",
+   "covers_models": [
+    "PSTX30",
+    "PSTX142"
+   ],
+   "identity_source": "file name; revision from document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132110M0201",
+   "abb_document_id": "1SFC132110M0201",
+   "title": "Spare part instruction",
+   "category": "softstarters",
+   "doc_type": "spare_part_instruction",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SFC132110M0201 - Replace the bypass contactor PSTX470_PSTX1250.pdf",
+   "library_path": "PSTX142-600-70/1SFC132110M0201 - Replace the bypass contactor PSTX470_PSTX1250.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFC132110M0201 - Replace the bypass contactor PSTX470_PSTX1250.pdf"
+   ],
+   "n_pages": 8,
+   "bytes": 22752589,
+   "sha256": "84a9f3c13901626058401030507cd8b2a7b0fac1c883dd704ba8aa54b3838e8a",
+   "published": "2016-01-05",
+   "covers_models": [
+    "PSTX470",
+    "PSTX720",
+    "PSTX1050"
+   ],
+   "identity_source": "file name; revision from document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132112M0201",
+   "abb_document_id": "1SFC132112M0201",
+   "title": "Spare part instruction",
+   "category": "softstarters",
+   "doc_type": "spare_part_instruction",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SFC132112M0201 - Replace the plastic details PSTX30_PSTX370.pdf",
+   "library_path": "PSTX142-600-70/1SFC132112M0201 - Replace the plastic details PSTX30_PSTX370.pdf",
+   "bundles": [
+    "PSTX142-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 12,
+   "bytes": 25994377,
+   "sha256": "6adf8cfddb90bb47ff11f29291ec2e23e0e7daf382a242fd53a7d3e7e6acaf08",
+   "published": "2016-01-05",
+   "covers_models": [
+    "PSTX30",
+    "PSTX142",
+    "PSTX210"
+   ],
+   "identity_source": "file name; revision from document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132116M0201",
+   "abb_document_id": "1SFC132116M0201",
+   "title": "Softstarters Type PSTX1050...1250",
+   "category": "softstarters",
+   "doc_type": "service_manual",
+   "revision": "C",
+   "language": "en",
+   "file_name": "1SFC132116M0201_-_Service_manual_PSTX1050...1250_REV_C_2021-07-28.pdf",
+   "library_path": "PSTX142-600-70/1SFC132116M0201_-_Service_manual_PSTX1050...1250_REV_C_2021-07-28.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFC132116M0201_-_Service_manual_PSTX1050...1250_REV_C_2021-07-28.pdf"
+   ],
+   "n_pages": 64,
+   "bytes": 49322167,
+   "sha256": "d97d80e8914f8d0ff7727dba4828c2e396ca6d99db77475fecbc3b4257d5bfe8",
+   "published": "2021-07-28",
+   "covers_models": [
+    "PSTX1050",
+    "PSTX470",
+    "PSTX1250",
+    "PSTX30",
+    "PSTX720",
+    "PSTX142",
+    "PSTX210"
+   ],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132423M0201",
+   "abb_document_id": "1SFC132423M0201",
+   "title": "Short circuit rating",
+   "category": "softstarters",
+   "doc_type": "technical_document",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFC132423M0201_Rev B.pdf",
+   "library_path": "PSTX142-600-70/1SFC132423M0201_Rev B.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/1SFC132423M0201_Rev B.pdf"
+   ],
+   "n_pages": 9,
+   "bytes": 412229,
+   "sha256": "45bf6ae630cd1ec92620d6bf50f2a587c19837a674886b5ad6ea4cefff4763b8",
+   "published": "2021-12-21",
+   "covers_models": [
+    "PSTX210",
+    "PSTX470",
+    "PSTX720",
+    "PSTX30",
+    "PSTX142",
+    "PSTX840",
+    "PSTX250",
+    "PSTX300",
+    "PSTX370",
+    "PSTX170",
+    "PSTX570",
+    "PSTX72",
+    "PSTX85"
+   ],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132451M0201",
+   "abb_document_id": "1SFC132451M0201",
+   "title": "PSTX142,PSTX170",
+   "category": "softstarters",
+   "doc_type": "installation_instruction",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFC132451M0201_(en)_A_end_of_life_PSTX142,PSTX170.pdf",
+   "library_path": "PSTX142-600-70/1SFC132451M0201_(en)_A_end_of_life_PSTX142,PSTX170.pdf",
+   "bundles": [
+    "PSTX142-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 5,
+   "bytes": 2937181,
+   "sha256": "cb6be2f4e1b5b5450460743307a702d0afc7ac01c27e75dbec5dd18676f885a8",
+   "published": "2025-04-14",
+   "covers_models": [
+    "PSTX142",
+    "PSTX170"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "2CMT001197D0169",
+   "abb_document_id": "2CMT001197D0169",
+   "title": "Technical document 2CMT001197D0169",
+   "category": "softstarters",
+   "doc_type": "technical_document",
+   "revision": "D",
+   "language": "en",
+   "file_name": "2CMT001197D0169_D.pdf",
+   "library_path": "PSTX142-600-70/2CMT001197D0169_D.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/2CMT001197D0169_D.pdf"
+   ],
+   "n_pages": 10,
+   "bytes": 545837,
+   "sha256": "16006f61f38c8ee30b64d4241a6f43b2743f3c01e98097d08d8add514bd9923f",
+   "published": "2022-02-10",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132093M0201",
+   "abb_document_id": "1SFC132093M0201",
+   "title": "Drawing 1SFC132093M0201",
+   "category": "softstarters",
+   "doc_type": "drawing",
+   "revision": "B",
+   "language": "en",
+   "file_name": "Anybus_PSTX_installation_guide_1SFC132093M0201_RevB.pdf",
+   "library_path": "PSTX142-600-70/Anybus_PSTX_installation_guide_1SFC132093M0201_RevB.pdf",
+   "bundles": [
+    "PSTX142-600-70",
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [
+    "PSTX30-600-70/Anybus_PSTX_installation_guide_1SFC132093M0201_RevB.pdf"
+   ],
+   "n_pages": 1,
+   "bytes": 314688,
+   "sha256": "c5064d00ffcdba640967dc3ca141ad4e377c470da8035f4ffc77e191ac0e1e70",
+   "published": "2016-10-11",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132046L0201",
+   "abb_document_id": "1SFC132046L0201",
+   "title": "RELEASE NOTE",
+   "category": "softstarters",
+   "doc_type": "release_note",
+   "revision": null,
+   "language": "en",
+   "file_name": "New_Anybus_1SFC132046L0201.pdf",
+   "library_path": "PSTX142-600-70/New_Anybus_1SFC132046L0201.pdf",
+   "bundles": [
+    "PSTX142-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 174800,
+   "sha256": "f8c76999b0f24f224ffd232c17b028fd1a9d1e9826bef95d188b4083ee9197cc",
+   "published": "2019-12-20",
+   "covers_models": [],
+   "identity_source": "file name; date: PDF creation date"
+  },
+  {
+   "doc_key": "9AKK108466A5420",
+   "abb_document_id": "9AKK108466A5420",
+   "title": "Document number: 9AKK108466A5420",
+   "category": "softstarters",
+   "doc_type": "end_of_life_notice",
+   "revision": "A",
+   "language": "en",
+   "file_name": "Softstarter short circuit coordination update_20220120.pdf",
+   "library_path": "PSTX142-600-70/Softstarter short circuit coordination update_20220120.pdf",
+   "bundles": [
+    "PSTX142-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 1,
+   "bytes": 117834,
+   "sha256": "dd0512c961e330d1ad1d2a8b797bbfe6ecf046df99de4c017045f0c47d04b3bc",
+   "published": "2022-02-17",
+   "covers_models": [
+    "PSE142",
+    "PSTX142",
+    "PSTX30"
+   ],
+   "identity_source": "document text; revision from document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC13105M0201-Service-manual-PSTX210-570-Rev-C",
+   "abb_document_id": null,
+   "title": "Softstarters Type PSTX210...370 and",
+   "category": "softstarters",
+   "doc_type": "service_manual",
+   "revision": "C",
+   "language": "en",
+   "file_name": "1SFC13105M0201_-_Service manual_PSTX210-570_Rev_C.pdf",
+   "library_path": "PSTX30-600-70/1SFC13105M0201_-_Service manual_PSTX210-570_Rev_C.pdf",
+   "bundles": [
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 86,
+   "bytes": 65261597,
+   "sha256": "e07dc432b779e11a8cb4e61978635b61b5fd5c7c0249184674a680452b31fb71",
+   "published": "2021-07-28",
+   "covers_models": [
+    "PSTX470",
+    "PSTX210",
+    "PSTX30",
+    "PSTX1250",
+    "PSTX142"
+   ],
+   "identity_source": "none found; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132084M0201",
+   "abb_document_id": "1SFC132084M0201",
+   "title": "Fieldbus communication",
+   "category": "softstarters",
+   "doc_type": "fieldbus_manual",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFC132084M0201_PSTX_AB_DeviceNet.pdf",
+   "library_path": "PSTX30-600-70/1SFC132084M0201_PSTX_AB_DeviceNet.pdf",
+   "bundles": [
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 18,
+   "bytes": 461004,
+   "sha256": "eeabe6a166ad5fa21a87989c043b6a036e8e83b115ff522830221f033c6681a1",
+   "published": "2024-07-03",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132089M0201",
+   "abb_document_id": "1SFC132089M0201",
+   "title": "Fieldbus communication",
+   "category": "softstarters",
+   "doc_type": "fieldbus_manual",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFC132089M0201_PSTX_Internal_Modbus_RTU.pdf",
+   "library_path": "PSTX30-600-70/1SFC132089M0201_PSTX_Internal_Modbus_RTU.pdf",
+   "bundles": [
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 36,
+   "bytes": 1172016,
+   "sha256": "03516244b76794fe868dbb1595f5d0c2a178ad5d03602c21c886757b36d66656",
+   "published": "2021-03-12",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132098M0201",
+   "abb_document_id": "1SFC132098M0201",
+   "title": "Spare part instruction",
+   "category": "softstarters",
+   "doc_type": "spare_part_instruction",
+   "revision": "B",
+   "language": "en",
+   "file_name": "1SFC132098M0201 - Replace HMI and accessories Rev B.pdf",
+   "library_path": "PSTX30-600-70/1SFC132098M0201 - Replace HMI and accessories Rev B.pdf",
+   "bundles": [
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 4,
+   "bytes": 4103294,
+   "sha256": "c1cde874a149b9e51dfc667e9bf4e9421c8995e2350a43e92b47754fe8d1a81c",
+   "published": "2015-06-17",
+   "covers_models": [
+    "PSTX30"
+   ],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132107M0201",
+   "abb_document_id": "1SFC132107M0201",
+   "title": "Spare part instruction",
+   "category": "softstarters",
+   "doc_type": "spare_part_instruction",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SFC132107M0201 - Replace the Current transformer PSTX470_PSTX1250.pdf",
+   "library_path": "PSTX30-600-70/1SFC132107M0201 - Replace the Current transformer PSTX470_PSTX1250.pdf",
+   "bundles": [
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 8,
+   "bytes": 22887235,
+   "sha256": "ef9746a65f19ebf1e45e58c2ffac89e0a3e554df4434e1e38f4b59fb5dd29c88",
+   "published": "2016-01-05",
+   "covers_models": [
+    "PSTX470",
+    "PSTX1250"
+   ],
+   "identity_source": "file name; revision from document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132108M0201",
+   "abb_document_id": "1SFC132108M0201",
+   "title": "Spare part instruction",
+   "category": "softstarters",
+   "doc_type": "spare_part_instruction",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SFC132108M0201 - Replace the fan PSTX30_PSTX1250.pdf",
+   "library_path": "PSTX30-600-70/1SFC132108M0201 - Replace the fan PSTX30_PSTX1250.pdf",
+   "bundles": [
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 4,
+   "bytes": 8340491,
+   "sha256": "cc43b0a9f9c78d59368980b0bb4e73247e6dab7e71aa3143872963488b8945e2",
+   "published": "2015-12-07",
+   "covers_models": [
+    "PSTX30"
+   ],
+   "identity_source": "file name; revision from document text; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132111M0201",
+   "abb_document_id": "1SFC132111M0201",
+   "title": "Spare part instruction",
+   "category": "softstarters",
+   "doc_type": "spare_part_instruction",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SFC132111M0201 - Replace the plates and stays PSTX470_1250.pdf",
+   "library_path": "PSTX30-600-70/1SFC132111M0201 - Replace the plates and stays PSTX470_1250.pdf",
+   "bundles": [
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 4,
+   "bytes": 6886764,
+   "sha256": "2ae02509d3d7cab8ea93147cd84542ca8ac2f5603713324e924c3a9b304c6b92",
+   "published": "2015-12-07",
+   "covers_models": [
+    "PSTX470"
+   ],
+   "identity_source": "file name; revision from document text; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132113M0201",
+   "abb_document_id": "1SFC132113M0201",
+   "title": "Spare part instruction",
+   "category": "softstarters",
+   "doc_type": "spare_part_instruction",
+   "revision": "A",
+   "language": "en",
+   "file_name": "1SFC132113M0201 - Replace the plastic details PSTX470_1250.pdf",
+   "library_path": "PSTX30-600-70/1SFC132113M0201 - Replace the plastic details PSTX470_1250.pdf",
+   "bundles": [
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 6,
+   "bytes": 20649781,
+   "sha256": "88bc3dd7eb4c4aae56375f1937d25478a4133703715606c9b530431087344e5c",
+   "published": "2016-01-08",
+   "covers_models": [
+    "PSTX470",
+    "PSTX1250"
+   ],
+   "identity_source": "file name; revision from document text; date: PDF creation date"
+  },
+  {
+   "doc_key": "1SFC132115M0201",
+   "abb_document_id": "1SFC132115M0201",
+   "title": "Softstarters Type PSTX720...840",
+   "category": "softstarters",
+   "doc_type": "service_manual",
+   "revision": "C",
+   "language": "en",
+   "file_name": "1SFC132115M0201_-_Service manual_PSTX720...840_Rev_C_2021-07-28.pdf",
+   "library_path": "PSTX30-600-70/1SFC132115M0201_-_Service manual_PSTX720...840_Rev_C_2021-07-28.pdf",
+   "bundles": [
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 60,
+   "bytes": 44922756,
+   "sha256": "90b5a94abc2e69b6530d965bfa6f9a657568e642b7da72811f706ce81ee88c81",
+   "published": "2021-07-28",
+   "covers_models": [
+    "PSTX720",
+    "PSTX30",
+    "PSTX470",
+    "PSTX1050",
+    "PSTX1250",
+    "PSTX142",
+    "PSTX210"
+   ],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132381M0201",
+   "abb_document_id": "1SFC132381M0201",
+   "title": "Fieldbus communication",
+   "category": "softstarters",
+   "doc_type": "fieldbus_manual",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFC132381M0201_PSTX_AB_BACnet.pdf",
+   "library_path": "PSTX30-600-70/1SFC132381M0201_PSTX_AB_BACnet.pdf",
+   "bundles": [
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 27,
+   "bytes": 622908,
+   "sha256": "bbeb6ee9ccc8f126d1df5de3d2fc1b566b61ffe430ffe2203c8adfa066320095",
+   "published": "2024-07-03",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132394M0201",
+   "abb_document_id": "1SFC132394M0201",
+   "title": "Fieldbus Communication",
+   "category": "softstarters",
+   "doc_type": "fieldbus_manual",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFC132394M0201_PSTX_AB_CANopen.pdf",
+   "library_path": "PSTX30-600-70/1SFC132394M0201_PSTX_AB_CANopen.pdf",
+   "bundles": [
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 30,
+   "bytes": 1052723,
+   "sha256": "69927e30302ff28f6386ccc529793dd3d695a6cbf58ded4c2c571b85ad79fc5b",
+   "published": "2024-10-03",
+   "covers_models": [],
+   "identity_source": "file name; date: printed revision date"
+  },
+  {
+   "doc_key": "1SFC132450M0201",
+   "abb_document_id": "1SFC132450M0201",
+   "title": "PSTX30-60,PSTX72-105",
+   "category": "softstarters",
+   "doc_type": "installation_instruction",
+   "revision": null,
+   "language": "en",
+   "file_name": "1SFC132450M0201_(en)_A_end_of_life_PSTX30-60,PSTX72-105.pdf",
+   "library_path": "PSTX30-600-70/1SFC132450M0201_(en)_A_end_of_life_PSTX30-60,PSTX72-105.pdf",
+   "bundles": [
+    "PSTX30-600-70"
+   ],
+   "alternate_copies": [],
+   "n_pages": 5,
+   "bytes": 409483,
+   "sha256": "4746c9800fcd9a2f6303c0f7d8276f4a5c4cdebc3b85808db42a3480865e331e",
+   "published": "2025-04-14",
+   "covers_models": [
+    "PSTX30",
+    "PSTX72"
+   ],
+   "identity_source": "file name; date: PDF creation date"
+  }
+ ]
+}

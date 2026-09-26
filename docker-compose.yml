@@ -1,0 +1,45 @@
+# Local-only stack. Nothing here reaches the internet except the model pull and the
+# one-off ABB document fetch, which is run by hand.
+services:
+  postgres:
+    image: postgres:16
+    environment: { POSTGRES_USER: docdrift, POSTGRES_PASSWORD: docdrift, POSTGRES_DB: docdrift }
+    ports: ["5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports: ["6333:6333"]
+    volumes: ["qdrantdata:/qdrant/storage"]
+
+  neo4j:
+    image: neo4j:5-community
+    environment: { NEO4J_AUTH: "neo4j/docdrift1" }
+    ports: ["7474:7474", "7687:7687"]
+    volumes: ["neo4jdata:/data"]
+
+  ollama:
+    image: ollama/ollama:latest
+    ports: ["11434:11434"]
+    volumes: ["ollamadata:/root/.ollama"]
+
+  api:
+    build: .
+    command: uvicorn docdrift.api:app --host 0.0.0.0 --port 8000
+    environment:
+      DOCDRIFT_STACK: production
+      DOCDRIFT_RECORD_STORE: postgresql://docdrift:docdrift@postgres:5432/docdrift
+      DOCDRIFT_AUDIT_STORE: postgresql://docdrift:docdrift@postgres:5432/docdrift
+      DOCDRIFT_QDRANT_URL: http://qdrant:6333
+      DOCDRIFT_NEO4J_URL: bolt://neo4j:docdrift1@neo4j:7687
+      DOCDRIFT_OLLAMA_URL: http://ollama:11434
+      DOCDRIFT_AUDIT_ENABLED: "false"
+      DOCDRIFT_GOVERNANCE_MODE: strict
+      ENABLE_OPERATOR_OCR: "false"
+    ports: ["8000:8000"]
+    # data/library and data/cache are local working copies of public ABB documents.
+    # They are mounted, never baked into the image and never redistributed.
+    volumes: ["./data:/app/data:ro"]
+    depends_on: [postgres, qdrant, neo4j, ollama]
+
+volumes: { pgdata: {}, qdrantdata: {}, neo4jdata: {}, ollamadata: {} }
