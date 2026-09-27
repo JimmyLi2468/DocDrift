@@ -32,7 +32,9 @@ corpus = build_corpus()
 _pipeline = build_pipeline(settings, corpus)
 _extractor = build_extractor(settings)
 
-app = FastAPI(title="DocDrift", version="0.3.0",
+from . import __version__ as _VERSION  # noqa: E402
+
+app = FastAPI(title="DocDrift", version=_VERSION,
               description="Local, read-only maintenance intelligence with documentation-drift "
                           "detection and explicit change governance.")
 
@@ -59,7 +61,9 @@ def health() -> dict:
 
 @app.get("/api/config")
 def config() -> dict:
-    return {"stack": {**settings.describe_stack(), "llm_active": _pipeline.llm.name},
+    from . import __version__
+    return {"version": __version__,
+            "stack": {**settings.describe_stack(), "llm_active": _pipeline.llm.name},
             "governance_mode": settings.governance_mode.value,
             "audit_enabled": settings.audit_enabled,
             "operator_ocr": settings.flags.enable_operator_ocr,
@@ -84,7 +88,8 @@ def ask_view(req: AskRequest) -> dict:
     turn_id = uuid.uuid4().hex
     answer, bundle = _pipeline.ask(req.question, mode=req.mode, session_id=req.session_id,
                                    turn_id=turn_id)
-    return {"turn_id": turn_id, "stored": settings.audit_enabled,
+    from . import __version__
+    return {"turn_id": turn_id, "stored": settings.audit_enabled, "version": __version__,
             **build_view(answer, bundle, _pipeline.store)}
 
 
@@ -175,4 +180,13 @@ def parse_photo_text(text: str = Form(...)) -> dict:
 
 
 # The demo page. Mounted last so it never shadows an API route.
-app.mount("/", StaticFiles(directory=WEB_DIR, html=True), name="web")
+class _NoCacheStatic(StaticFiles):
+    """Serve the page files with no-cache, so a browser never runs page code from an
+    older release against this server."""
+    async def get_response(self, path, scope):
+        resp = await super().get_response(path, scope)
+        resp.headers["Cache-Control"] = "no-cache"
+        return resp
+
+
+app.mount("/", _NoCacheStatic(directory=WEB_DIR, html=True), name="web")

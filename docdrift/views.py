@@ -55,6 +55,7 @@ def _change(c, store) -> dict:
         "summary": comm.summary,
         "reflected_in_current_document": (c.incorporation.incorporated if c.incorporation else None),
         "log": _log(c, store),
+        "approval_path": c.authority_path.describe() if c.authority_path else None,
         "comm_id": comm.comm_id, "change_ref": comm.change_ref, "channel": comm.channel.value,
         "date": str(comm.date), "subject": comm.subject, "body": comm.body,
         "author": _person(store, comm.author_person_id),

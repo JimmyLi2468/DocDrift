@@ -44,7 +44,9 @@ def model_patterns(eq: Equipment | None) -> list[re.Pattern]:
     names = {eq.model}
     if eq.type_code:
         names.add(eq.type_code)
-    return [re.compile(r"(?<![A-Za-z0-9])" + re.escape(n) + r"(?![0-9])") for n in names]
+    # A variant suffix makes it a different product: "AF38..K" (push-in spring terminals)
+    # and "AF38Z" (special-application coils) are not the asset's AF38.
+    return [re.compile(r"(?<![A-Za-z0-9])" + re.escape(n) + r"(?![0-9A-Z])(?!\.\.[A-Z])") for n in names]
 
 
 def names_model(text: str, eq: Equipment | None) -> bool:

@@ -53,6 +53,7 @@ def test_base_stack_is_the_default():
         assert getattr(s, k) == v
 
 
-def test_unimplemented_production_backend_fails_loudly(corpus):
-    with pytest.raises(BackendNotAvailable, match="PostgreSQL adapter"):
-        build_pipeline(Settings.for_stack("production"), corpus)
+def test_unreachable_production_backend_fails_loudly_instead_of_falling_back(corpus):
+    s = Settings.for_stack("production", record_store_url="postgresql://r:r@127.0.0.1:1/docdrift")
+    with pytest.raises(BackendNotAvailable, match="not reachable"):
+        build_pipeline(s, corpus)

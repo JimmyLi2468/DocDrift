@@ -54,6 +54,15 @@ class Pipeline:
             self.store, self.authority, self.embedder, eq, bundle.versions,
             question, match.fault_codes, th, mode, docs_in_use=docs_in_use)
 
+        # Second, independent derivation of approver authority, from the knowledge
+        # graph. The decision above used the authority records; G10 requires both to
+        # agree, so a divergence between the two sources withholds the answer.
+        for cand in bundle.candidate_changes:
+            comm = cand.communication
+            if comm.approver_person_id:
+                day = str(comm.decision_date or comm.date)
+                cand.authority_path = self.graph.authority_path(comm.comm_id, day)
+
         drifting = effective_changes(bundle.candidate_changes)
         other = effective_changes(bundle.candidate_changes, scope="asset_open_change")
         if other:

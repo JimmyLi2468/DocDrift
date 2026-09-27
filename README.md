@@ -165,33 +165,111 @@ exists.
 
 ---
 
-## Run it
+## Setup (once)
 
-First time, from the folder that holds the eight downloaded bundles and the repo archive:
+Written for macOS on Apple silicon. Part A is enough for the demo page on the base
+stack; part B adds the production stack. Both are run once per machine.
+
+### Before you start
+
+| needed for | what | check |
+|---|---|---|
+| A | Python 3.11 or newer (macOS ships 3.9) | `python3.12 --version`; if missing: `brew install python@3.12` |
+| A | the eight ABB bundles and `docdrift-repo.tar.gz` in one folder | `ls` shows the bundle folders and the archive |
+| B | Docker Desktop, started at least once | `docker --version` (see *docker: command not found* below) |
+| B | Homebrew, for Ollama | `brew --version` |
+| B | about 12 GB free disk (model 4.9 GB, images and volumes about 3 GB, Python packages about 2 GB) | `df -h ~` |
+
+### A. Base stack
+
+From the folder that holds the bundles and the archive:
 
 ```bash
 tar -xzf docdrift-repo.tar.gz && cd docdrift
-python3 -m venv .venv && source .venv/bin/activate          # Python 3.11 or newer
+python3.12 -m venv .venv                  # not plain python3: on macOS that is 3.9
+source .venv/bin/activate
+python --version                          # must print 3.11 or newer
+pip install --upgrade pip
 pip install pydantic numpy pymupdf reportlab fastapi uvicorn python-multipart pytest httpx
 export PYTHONPATH=.
+
 python scripts/unpack_library.py ../ACH580-01* ../ACS480* ../ACS580-04* ../AF38* ../MS132* ../PSR25* ../PSTX142* ../PSTX30*
 python scripts/import_library.py          # manifest: 141 publications
-python scripts/ingest_abb.py              # every page, ~30 s
+python scripts/ingest_abb.py              # every page, about 30 s: 6,741 chunks
 python scripts/make_synthetic_history.py  # 10 watermarked n-1 PDFs
-python -m pytest -q                       # 72 passed
+python -m pytest -q                       # 85 passed, 1 skipped (the Qdrant test, until part B)
+
+uvicorn docdrift.api:app --port 8000      # demo page at http://localhost:8000
 ```
 
 Bundles can be zip files or already-unzipped folders, under any download name that starts
 with the type code. The originals are copied, not moved.
 
+### B. Production stack
+
+Start Docker Desktop first (`open -a Docker`, then wait until its menu-bar icon says it
+is running). Then, in the activated environment inside `docdrift`:
 
 ```bash
-pip install pydantic numpy pymupdf fastapi uvicorn python-multipart reportlab
-PYTHONPATH=. uvicorn docdrift.api:app --port 8000   # demo page at http://localhost:8000
-PYTHONPATH=. python -m docdrift.cli                  # the core use case in the console
-PYTHONPATH=. python scripts/evaluate.py              # 20 cases x 2 modes, writes a scorecard
-PYTHONPATH=. python -m pytest -q                     # 72 tests, offline, ~6 s
+brew install ollama
+brew services start ollama                # runs Ollama in the background, also after a reboot
+ollama pull llama3.1:8b                   # about 4.9 GB
+
+pip install "psycopg[binary]" qdrant-client neo4j sentence-transformers
+python -m pytest -q                       # now 86 passed
+
+docker compose up -d                      # PostgreSQL, Qdrant, Neo4j, reachable on 127.0.0.1 only
+docker compose ps                         # all three "running"; postgres also "healthy"
+python scripts/load_production.py         # a few minutes: downloads the embedding model once, embeds 6,753 chunks
+python scripts/check_production.py        # expect: all checks passed
+
+DOCDRIFT_STACK=production uvicorn docdrift.api:app --port 8000 --reload
 ```
+
+The page header shows `Stack: production` and `LLM: ollama llama3.1:8b`.
+
+**`docker: command not found`.** Docker Desktop is either not installed or has not put
+its command-line tool on the path yet.
+
+```bash
+ls -d /Applications/Docker.app            # "No such file": install it - brew install --cask docker
+open -a Docker                            # first start: accept the prompts, wait for "running"
+ls ~/.docker/bin/docker /usr/local/bin/docker 2>/dev/null
+```
+
+If the tool is only in `~/.docker/bin` (Docker's "per-user" install), add it to the path.
+The first line makes it permanent for new Terminal windows; the second applies it to the
+window you are in, because `~/.zshrc` is only read when a window opens:
+
+```bash
+echo 'export PATH="$HOME/.docker/bin:$PATH"' >> ~/.zshrc
+export PATH="$HOME/.docker/bin:$PATH"
+docker --version
+```
+
+Alternatively, in Docker Desktop: *Settings > Advanced > System (requires password)*
+installs it to `/usr/local/bin`.
+
+### Every new Terminal window
+
+```bash
+cd ~/path/to/DocDrift/docdrift
+source .venv/bin/activate
+export PYTHONPATH=.
+```
+
+### Everyday commands
+
+```bash
+uvicorn docdrift.api:app --port 8000 --reload                           # base stack
+docker compose up -d && DOCDRIFT_STACK=production uvicorn docdrift.api:app --port 8000 --reload
+python -m docdrift.cli                    # the core use case in the console
+python scripts/evaluate.py                # 20 cases x 2 modes, writes a scorecard
+python -m pytest -q                       # offline, about 7 s
+docker compose stop                       # frees the containers' memory; data is kept
+```
+
+## Using DocDrift
 
 ### The demo page
 
@@ -224,6 +302,24 @@ re-renders only the preview and never moves the page's scroll position.
 The history lives only in the page's memory. It is never put in localStorage or
 sessionStorage, and a reload clears it.
 
+### Static demo (GitHub Pages)
+
+`docs/` holds a copy of the demo page that needs no server. It replays the answers the
+real pipeline gave to the three demo questions, in both governance modes, with the cited
+pages rendered and highlighted as the live page shows them. Records, the evidence page and
+page navigation around each cited page all work; *Open PDF* links to the document in the
+ABB Library. Any other question is refused with a note to run DocDrift locally.
+
+To publish: on GitHub, *Settings > Pages > Build and deployment*, source *Deploy from a
+branch*, branch `main`, folder `/docs`. The page appears at
+`https://<user>.github.io/<repository>/` after a minute.
+
+Rebuild after any change that alters answers (it needs the local ABB library):
+
+```bash
+python scripts/build_static_demo.py      # about 1 minute; writes docs/, about 8 MB
+```
+
 ### Audit trail - off by default
 
 | setting | default | effect when on |
@@ -231,29 +327,77 @@ sessionStorage, and a reload clears it.
 | `DOCDRIFT_AUDIT_ENABLED` | `false` | every question/answer turn is appended to the conversation store, and the full governance reasoning to `audit/decisions.jsonl` |
 | `DOCDRIFT_AUDIT_STORE` | `sqlite:///audit/conversations.sqlite` (base), `postgresql://...` (production) | where the `conversation_turns` table lives |
 
-With it off, the backend writes nothing: no file, no row, and `GET
+The business records are also read-only at the database level. They are loaded once at
+startup, then the connection is sealed (`PRAGMA query_only`), and SQLite itself refuses
+any insert, update, delete or schema change for the rest of the run. The audit store is a
+separate connection. For the production stack, the same guarantee comes from connecting
+to PostgreSQL as a role granted `SELECT` only, with loading done by a separate role.
+
+With audit off, the backend writes nothing: no file, no row, and `GET
 /api/audit/conversations` returns an empty list. The page header shows the current
 setting. Stored turns are grouped by a per-tab session id and are append-only.
 
+### After updating the code
+
+Stop the server (Ctrl+C) and start it again, then reload the page. The page files are
+read from disk on every request, but the Python code is loaded once at startup, so an
+old server behind new page files is a mismatch. The page checks for this and shows
+"restart the server" in the header. During development,
+`uvicorn docdrift.api:app --port 8000 --reload` restarts automatically on code changes.
+
 ### Base stack and production stack
 
-The base stack stays the default and is never removed. Selection is by configuration
-at startup, not by a control on the page: switching the record store or vector index
-means re-indexing, so it is a restart-level choice. The active stack is shown in the
-page header.
+The base stack stays the default and is never removed. Selection is by configuration at
+startup, not by a control on the page, and the active stack is shown in the page header.
+
+| component | base (default) | production |
+|---|---|---|
+| records | SQLite in memory | PostgreSQL 16 (Docker) |
+| vector search | in-process index | Qdrant (Docker) |
+| knowledge graph | in-process graph | Neo4j 5 Community (Docker) |
+| embeddings | hashing (no download) | `BAAI/bge-small-en-v1.5` |
+| wording | the manual's own sentences | Ollama `llama3.1:8b`, native |
 
 ```bash
-DOCDRIFT_STACK=base        uvicorn docdrift.api:app    # SQLite, local vectors, in-memory graph, hashing embedder, extractive
-DOCDRIFT_STACK=production  uvicorn docdrift.api:app    # PostgreSQL, Qdrant, Neo4j, sentence-transformers, Ollama
-DOCDRIFT_STACK=base DOCDRIFT_LLM_BACKEND=ollama uvicorn docdrift.api:app   # mixed: base stores, local LLM
+DOCDRIFT_STACK=base        uvicorn docdrift.api:app --port 8000
+DOCDRIFT_STACK=production  uvicorn docdrift.api:app --port 8000
+DOCDRIFT_STACK=base DOCDRIFT_LLM_BACKEND=ollama uvicorn docdrift.api:app --port 8000   # mixed
 ```
 
-Each component can be overridden on its own: `DOCDRIFT_RECORD_STORE`,
+Every component can be overridden on its own: `DOCDRIFT_RECORD_STORE`,
 `DOCDRIFT_VECTOR_BACKEND`, `DOCDRIFT_GRAPH_BACKEND`, `DOCDRIFT_EMBEDDER`,
-`DOCDRIFT_LLM_BACKEND`, `DOCDRIFT_AUDIT_STORE`, plus the service URLs and model names.
-The embedding and LLM adapters exist. The PostgreSQL, Qdrant and Neo4j adapters are not
-written yet, and selecting one fails at startup with a message naming the base setting to
-use instead - never a silent fallback. The PostgreSQL conversation store is written.
+`DOCDRIFT_EMBEDDING_MODEL`, `DOCDRIFT_LLM_BACKEND`, `DOCDRIFT_OLLAMA_MODEL`,
+`DOCDRIFT_AUDIT_STORE`, plus the service URLs and keys. A selected service that cannot
+be reached stops the startup with a message; there is no silent fallback. The one
+exception is Ollama: if it is not running, answers use the manual's own sentences, and
+the header says so.
+
+**Loading and serving are separate.** `scripts/load_production.py` writes the corpus into
+PostgreSQL, Qdrant and Neo4j with the loader credentials, and stamps each with a build
+fingerprint. The API connects read-only and refuses to start if the three hold
+different builds, so a half-finished reload cannot serve mixed data.
+
+**Read-only is enforced by each service**, not only by the code:
+
+| service | API credential | what the service refuses |
+|---|---|---|
+| PostgreSQL | role `docdrift_reader`: `SELECT` on records, `INSERT` on the audit table only | any update, delete or schema change; changing a stored audit turn |
+| Qdrant | read-only API key | any upsert or delete |
+| Neo4j | read-access sessions | any write query |
+
+`scripts/check_production.py` attempts a write through each one and fails unless the
+service refuses it.
+
+**Neo4j checks approval authority.** For every change with an approver, the graph is
+asked for a path: the decision, decided by a person, who holds a role, which is
+authorised for the change's scope on the decision date. This is derived separately from
+the authority records. Gate G10 requires the two to agree; if they disagree, the answer
+is withheld. The path is shown on the evidence records page.
+
+**The LLM only rewords, and is checked.** Each guidance step is the manual's sentence,
+reworded by the model. The rewording is discarded, and the manual's sentence used, if it
+adds or drops any number, code or value, adds or removes a negation, or is much longer.
+The citation always quotes the manual verbatim.
 
 ---
 
@@ -392,7 +536,7 @@ that no superseded revision was cited, and that the gates held. Current result:
 the anchoring of every change thread to its real page, frame-range applicability, each
 governance branch, invalidation with and without authority, both modes, the n-1 window,
 the OCR interface, citation validation, gate blocking, the audit switch, stack selection,
-the demo-page API, the synthetic PDFs and download-name handling. **72 tests,
+the demo-page API, the synthetic PDFs and download-name handling. **86 tests,
 no network, ~6 s.**
 
 A fresh checkout has the manifest but not the library. There, the 17 tests that assert on
@@ -403,19 +547,34 @@ tested as such.
 
 ---
 
-## Swapping in the production stack
+## Production stack: operating notes
+
+Setup is in *Setup (once)*, part B.
+
+Memory: the three containers take about 2 GB (Neo4j is capped at 768 MB),
+`llama3.1:8b` about 5-6 GB while loaded, and the API with the embedding model about
+1 GB. `docker compose stop` frees the first; Ollama unloads the model after 30 minutes
+idle. Neo4j Browser, at http://localhost:7474 (user `neo4j`, password `docdrift1`), shows
+the graph: try
+`MATCH p=(:Communication {id:'ECN-2026-011'})-[:DECIDED_BY]->()-[:HAS_ROLE]->()-[:AUTHORISED_FOR]->() RETURN p`.
+
+Reload after changing the library, the synthetic history or the enterprise records: run
+`load_production.py` again, then restart the API. To start over completely:
+`docker compose down -v`, then `docker compose up -d` and `load_production.py`.
+
+## Adapters
 
 Every backend sits behind a protocol in `store/base.py`; all wiring lives in `app.py`.
 Nothing in the pipeline imports a database driver.
 
-| shipped default | production | interface |
+| base | production | interface |
 |---|---|---|
-| `SqliteRecordStore` | PostgreSQL (same tables, same columns) | `RecordStore` |
-| `LocalVectorStore` (hashing embeddings) | Qdrant | `VectorStore` |
-| `MemoryGraphStore` | Neo4j Community | `GraphStore` |
-| `HashingEmbedder` | `SentenceTransformerEmbedder` (written, lazily imported) | `Embedder` |
-| `ExtractiveClient` | `OllamaClient` (written, probes `/api/tags`) | `LLMClient` |
+| `SqliteRecordStore` | `PostgresRecordStore` (same tables, JSONB payloads) | `RecordStore` |
+| `LocalVectorStore` | `QdrantVectorStore` (payload-filtered search) | `VectorStore` |
+| `MemoryGraphStore` | `Neo4jGraphStore` (Cypher authority path) | `GraphStore` |
+| `HashingEmbedder` | `SentenceTransformerEmbedder` | `Embedder` |
+| `ExtractiveClient` | `GuardedClient(OllamaClient)` | `LLMClient` |
 | `DisabledPhotoExtractor` | `TesseractPhotoExtractor` behind `ENABLE_OPERATOR_OCR` | `OperatorPhotoExtractor` |
-| chunk cache | `ingest/pdf.py` - PyMuPDF extraction + section-aware chunking | `Chunk` / `DocumentVersion` |
 
-`docker-compose.yml` brings up PostgreSQL, Qdrant, Neo4j, Ollama and the API.
+Keyword search (BM25) stays in-process in both stacks, over the chunks read from the
+record store, so the two stacks rank from the same text.

@@ -52,14 +52,41 @@ class HashingEmbedder:
 
 
 class SentenceTransformerEmbedder:
-    def __init__(self, model_name: str = "sentence-transformers/all-MiniLM-L6-v2") -> None:
+    def __init__(self, model_name: str = "BAAI/bge-small-en-v1.5") -> None:
         from sentence_transformers import SentenceTransformer  # lazy
 
+        self.model_name = model_name
         self._model = SentenceTransformer(model_name)
-        self.dim = self._model.get_sentence_embedding_dimension()
+        dim = getattr(self._model, "get_embedding_dimension", None) or self._model.get_sentence_embedding_dimension
+        self.dim = dim()
+        self._cache: dict[str, np.ndarray] = {}
+        # Optional on-disk cache (DOCDRIFT_EMBEDDING_CACHE=data/cache): the base stack
+        # with real embeddings then re-embeds only new chunks on restart. The
+        # production stack does not need it - Qdrant keeps the vectors.
+        import os
+        import pathlib
+        d = os.environ.get("DOCDRIFT_EMBEDDING_CACHE")
+        self._disk = (pathlib.Path(d) / f"embeddings_{model_name.replace('/', '_')}.npz") if d else None
+        if self._disk and self._disk.exists():
+            z = np.load(self._disk, allow_pickle=False)
+            self._cache = dict(zip(z["keys"].tolist(), z["vecs"]))
+
+    @staticmethod
+    def _key(text: str) -> str:
+        import hashlib
+        return hashlib.sha1(text.encode()).hexdigest()
 
     def encode(self, texts: Sequence[str]) -> np.ndarray:
-        return self._model.encode(list(texts), normalize_embeddings=True)
+        texts = list(texts)
+        keys = [self._key(t) for t in texts]
+        missing = {k: t for k, t in zip(keys, texts) if k not in self._cache}
+        if missing:
+            vecs = self._model.encode(list(missing.values()), normalize_embeddings=True, batch_size=64)
+            self._cache.update(zip(missing.keys(), vecs))
+            if self._disk and len(missing) >= 100:
+                self._disk.parent.mkdir(parents=True, exist_ok=True)
+                np.savez(self._disk, keys=np.array(list(self._cache)), vecs=np.stack(list(self._cache.values())))
+        return np.stack([self._cache[k] for k in keys]) if texts else np.zeros((0, self.dim))
 
 
 def cosine(a: np.ndarray, b: np.ndarray) -> float:
@@ -69,7 +96,7 @@ def cosine(a: np.ndarray, b: np.ndarray) -> float:
     return float(np.dot(a, b) / (na * nb))
 
 
-def build_embedder(name: str = "hashing") -> Embedder:
+def build_embedder(name: str = "hashing", model_name: str | None = None) -> Embedder:
     if name == "sentence-transformers":
-        return SentenceTransformerEmbedder()
+        return SentenceTransformerEmbedder(model_name or "BAAI/bge-small-en-v1.5")
     return HashingEmbedder()

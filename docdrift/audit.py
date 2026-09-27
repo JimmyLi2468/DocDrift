@@ -116,18 +116,21 @@ class SqliteConversationStore:
 
 
 class PostgresConversationStore:
-    """Same table in PostgreSQL. Written against psycopg 3; exercised only when the
-    production stack is running."""
+    """The same table in PostgreSQL (`docdrift_audit.conversation_turns`, created by
+    deploy/postgres/init.sql). The API's role may INSERT and SELECT only - it cannot
+    alter or delete a stored turn."""
     enabled = True
+    TABLE = "docdrift_audit.conversation_turns"
 
     def __init__(self, url: str) -> None:
         import psycopg  # lazily: the base stack does not need the driver
         self.conn = psycopg.connect(url, autocommit=True)
-        self.conn.execute(SCHEMA)
+        if self.conn.execute("SELECT to_regclass(%s)", (self.TABLE,)).fetchone()[0] is None:
+            raise RuntimeError(f"{self.TABLE} does not exist; it is created by deploy/postgres/init.sql")
 
     def append(self, turn_id: str, session_id: str, entry: dict, answer: OperatorAnswer) -> None:
         self.conn.execute(
-            "INSERT INTO conversation_turns VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
+            f"INSERT INTO {self.TABLE} VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
             (turn_id, session_id, entry["timestamp"], entry["question"], entry["governance_mode"],
              entry["equipment"], entry["status"], int(entry["answered"]), answer.pending_change,
              json.dumps(entry, default=str)))
@@ -135,7 +138,7 @@ class PostgresConversationStore:
     def turns(self, session_id: str | None = None) -> list[dict]:
         cur = self.conn.execute(
             "SELECT turn_id, session_id, asked_at, question, governance_mode, equipment, status, "
-            "answered, pending_change FROM conversation_turns"
+            f"answered, pending_change FROM {self.TABLE}"
             + (" WHERE session_id=%s" if session_id else "") + " ORDER BY asked_at",
             (session_id,) if session_id else ())
         cols = [d.name for d in cur.description]

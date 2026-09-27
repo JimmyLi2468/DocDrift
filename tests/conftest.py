@@ -1,3 +1,10 @@
+import os
+
+# The tests describe the base stack. A shell that still has production settings
+# exported (DOCDRIFT_STACK=production, ...) must not change what they test.
+for _k in [k for k in os.environ if k.startswith("DOCDRIFT_")]:
+    del os.environ[_k]
+
 import pytest
 
 from docdrift.app import build_pipeline

@@ -39,6 +39,16 @@ class SqliteRecordStore:
         self.conn.executemany(sql, rows)
         self.conn.commit()
 
+    def seal(self) -> None:
+        """Make the connection read-only for the rest of the process.
+
+        Records are loaded once at startup; after that SQLite itself refuses every
+        INSERT, UPDATE, DELETE or DDL on this connection (`PRAGMA query_only`), so
+        "DocDrift does not modify records" holds even if application code tries to.
+        """
+        self.conn.execute("PRAGMA query_only = ON")
+        self.sealed = True
+
     def upsert_equipment(self, items: Sequence[Equipment]) -> None:
         self._bulk(
             "INSERT OR REPLACE INTO equipment VALUES (?,?,?,?)",

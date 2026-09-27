@@ -69,3 +69,22 @@ def test_partial_type_code_names_the_closest_asset_and_one_check(pipeline):
     lines = a.clarification_needed.splitlines()
     assert "P5" in lines[0] and "MS132-10T" in lines[0]
     assert [l for l in lines if l.startswith("- ")] == [l for l in lines if l.startswith("- Equipment identified")]
+
+
+def test_page_and_server_versions_match():
+    import re
+    from docdrift import __version__
+    from docdrift.api import WEB_DIR
+    js = (WEB_DIR / "app.js").read_text()
+    assert re.search(r'const PAGE_VERSION = "([^"]+)"', js).group(1) == __version__
+
+
+def test_record_store_is_read_only_at_the_database_level(pipeline):
+    import sqlite3
+    import pytest as _pytest
+    with _pytest.raises(sqlite3.OperationalError, match="readonly|read-only|query_only"):
+        pipeline.store.conn.execute("UPDATE doc_versions SET payload = '{}'")
+    with _pytest.raises(sqlite3.OperationalError):
+        pipeline.store.conn.execute("DELETE FROM communications")
+    with _pytest.raises(sqlite3.OperationalError):
+        pipeline.store.conn.execute("CREATE TABLE x (y)")

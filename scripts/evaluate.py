@@ -24,9 +24,15 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="evaluation_scorecard.md")
     ap.add_argument("--csv", default="evaluation_results.csv")
+    ap.add_argument("--stack", choices=["base", "production"], default=None,
+                    help="default: DOCDRIFT_STACK, else base")
     args = ap.parse_args()
 
-    settings = Settings()
+    import os
+    if args.stack:
+        os.environ["DOCDRIFT_STACK"] = args.stack
+    settings = Settings.from_env()
+    settings.audit_enabled = False
     settings.audit_path = tempfile.mkstemp(suffix=".jsonl")[1]
     indexed = bool(load_chunk_cache())
     results = run_evaluation(settings=settings)

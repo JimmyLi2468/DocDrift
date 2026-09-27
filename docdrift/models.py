@@ -169,6 +169,20 @@ class IncorporationCheck(BaseModel):
     reason: str = ""
 
 
+class AuthorityPath(BaseModel):
+    comm_id: str
+    approver_id: str
+    approver_name: str
+    role: str
+    scope_id: str
+    valid_from: str
+    valid_to: str | None = None
+
+    def describe(self) -> str:
+        return (f"{self.approver_name} -> {self.role} -> authorised for {self.scope_id} "
+                f"({self.valid_from} to {self.valid_to or 'open'})")
+
+
 class CandidateChange(BaseModel):
     communication: Communication
     verdict: GovernanceVerdict
@@ -178,6 +192,11 @@ class CandidateChange(BaseModel):
     incorporation: IncorporationCheck | None = None
     relevance: float = 0.0
     thread: list[str] = Field(default_factory=list)
+    #: Approval path found in the knowledge graph, when one exists:
+    #: [decision, approver, role, scope] plus the authority window that covers the
+    #: decision date. Derived independently of the authority records; gate
+    #: G10_AUTHORITY_PATH_AGREES requires the two to agree.
+    authority_path: "AuthorityPath | None" = None
 
     @property
     def classification(self) -> str:

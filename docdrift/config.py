@@ -67,13 +67,18 @@ STACK_PROFILES: dict[str, dict[str, str]] = {
         "llm_backend": "extractive",
         "audit_store_url": "sqlite:///audit/conversations.sqlite",
     },
+    # The API connects with read-only credentials: PostgreSQL role docdrift_reader
+    # (SELECT only, plus INSERT on the audit table), Qdrant's read-only API key, and
+    # Neo4j read-access sessions. scripts/load_production.py uses the *_loader_* ones.
     "production": {
-        "record_store_url": "postgresql://docdrift:docdrift@localhost:5432/docdrift",
+        "record_store_url": "postgresql://docdrift_reader:docdrift_reader@localhost:5432/docdrift",
+        "loader_store_url": "postgresql://docdrift_loader:docdrift_loader@localhost:5432/docdrift",
         "vector_backend": "qdrant",
         "graph_backend": "neo4j",
         "embedder": "sentence-transformers",
+        "embedding_model": "BAAI/bge-small-en-v1.5",
         "llm_backend": "ollama",
-        "audit_store_url": "postgresql://docdrift:docdrift@localhost:5432/docdrift",
+        "audit_store_url": "postgresql://docdrift_reader:docdrift_reader@localhost:5432/docdrift",
     },
 }
 
@@ -89,6 +94,9 @@ _ENV_OVERRIDES = {
     "ollama_url": "DOCDRIFT_OLLAMA_URL",
     "ollama_model": "DOCDRIFT_OLLAMA_MODEL",
     "embedding_model": "DOCDRIFT_EMBEDDING_MODEL",
+    "loader_store_url": "DOCDRIFT_LOADER_STORE",
+    "qdrant_api_key": "DOCDRIFT_QDRANT_API_KEY",
+    "qdrant_loader_api_key": "DOCDRIFT_QDRANT_LOADER_API_KEY",
 }
 
 
@@ -108,9 +116,12 @@ class Settings:
     graph_backend: str = "memory"
     embedder: str = "hashing"
     llm_backend: str = "extractive"
+    loader_store_url: str = ""
     qdrant_url: str = "http://localhost:6333"
+    qdrant_api_key: str = "docdrift-read"            # Qdrant read-only key (API)
+    qdrant_loader_api_key: str = "docdrift-write"    # Qdrant full-access key (loader only)
     neo4j_url: str = "bolt://neo4j:docdrift1@localhost:7687"
-    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+    embedding_model: str = "BAAI/bge-small-en-v1.5"
     ollama_model: str = "llama3.1:8b"
     ollama_url: str = "http://localhost:11434"
 
@@ -143,4 +154,5 @@ class Settings:
     def describe_stack(self) -> dict[str, str]:
         return {"stack": self.stack, "record_store": self.record_store_url.split("@")[-1],
                 "vector": self.vector_backend, "graph": self.graph_backend,
-                "embedder": self.embedder, "llm": self.llm_backend}
+                "embedder": self.embedder if self.embedder != "sentence-transformers" else self.embedding_model,
+                "llm": self.llm_backend if self.llm_backend != "ollama" else f"ollama {self.ollama_model}"}

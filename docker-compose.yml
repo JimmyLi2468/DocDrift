@@ -1,45 +1,45 @@
-# Local-only stack. Nothing here reaches the internet except the model pull and the
-# one-off ABB document fetch, which is run by hand.
+# Production-stack services for DocDrift, local only. The API itself runs natively
+# (uvicorn), next to the PDF library, and Ollama runs natively too: on Apple silicon
+# only a native Ollama can use the GPU.
+#
+#   docker compose up -d                          # start the three databases
+#   PYTHONPATH=. python scripts/load_production.py
+#   PYTHONPATH=. python scripts/check_production.py
+#   DOCDRIFT_STACK=production uvicorn docdrift.api:app --port 8000
+#
+# Credentials are for a local demo. The API uses the read-only ones.
 services:
   postgres:
     image: postgres:16
-    environment: { POSTGRES_USER: docdrift, POSTGRES_PASSWORD: docdrift, POSTGRES_DB: docdrift }
-    ports: ["5432:5432"]
-    volumes: ["pgdata:/var/lib/postgresql/data"]
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docdrift_admin
+      POSTGRES_DB: docdrift
+    ports: ["127.0.0.1:5432:5432"]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./deploy/postgres/init.sql:/docker-entrypoint-initdb.d/10-roles.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d docdrift"]
+      interval: 5s
+      retries: 20
 
   qdrant:
     image: qdrant/qdrant:latest
-    ports: ["6333:6333"]
+    environment:
+      QDRANT__SERVICE__API_KEY: docdrift-write            # loader
+      QDRANT__SERVICE__READ_ONLY_API_KEY: docdrift-read   # API: search only
+      QDRANT__TELEMETRY_DISABLED: "true"
+    ports: ["127.0.0.1:6333:6333"]
     volumes: ["qdrantdata:/qdrant/storage"]
 
   neo4j:
     image: neo4j:5-community
-    environment: { NEO4J_AUTH: "neo4j/docdrift1" }
-    ports: ["7474:7474", "7687:7687"]
+    environment:
+      NEO4J_AUTH: neo4j/docdrift1
+      NEO4J_server_memory_heap_max__size: 512m
+      NEO4J_server_memory_pagecache_size: 256m
+    ports: ["127.0.0.1:7474:7474", "127.0.0.1:7687:7687"]
     volumes: ["neo4jdata:/data"]
 
-  ollama:
-    image: ollama/ollama:latest
-    ports: ["11434:11434"]
-    volumes: ["ollamadata:/root/.ollama"]
-
-  api:
-    build: .
-    command: uvicorn docdrift.api:app --host 0.0.0.0 --port 8000
-    environment:
-      DOCDRIFT_STACK: production
-      DOCDRIFT_RECORD_STORE: postgresql://docdrift:docdrift@postgres:5432/docdrift
-      DOCDRIFT_AUDIT_STORE: postgresql://docdrift:docdrift@postgres:5432/docdrift
-      DOCDRIFT_QDRANT_URL: http://qdrant:6333
-      DOCDRIFT_NEO4J_URL: bolt://neo4j:docdrift1@neo4j:7687
-      DOCDRIFT_OLLAMA_URL: http://ollama:11434
-      DOCDRIFT_AUDIT_ENABLED: "false"
-      DOCDRIFT_GOVERNANCE_MODE: strict
-      ENABLE_OPERATOR_OCR: "false"
-    ports: ["8000:8000"]
-    # data/library and data/cache are local working copies of public ABB documents.
-    # They are mounted, never baked into the image and never redistributed.
-    volumes: ["./data:/app/data:ro"]
-    depends_on: [postgres, qdrant, neo4j, ollama]
-
-volumes: { pgdata: {}, qdrantdata: {}, neo4jdata: {}, ollamadata: {} }
+volumes: { pgdata: {}, qdrantdata: {}, neo4jdata: {} }

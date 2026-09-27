@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from .config import Thresholds
 from .drift import effective_changes
+from .governance import AuthorityState
 from .models import (ContentProvenance, DocumentationStatus, EvidenceBundle, GateResult,
                      OperatorAnswer)
 from .validate import validate_answer
@@ -22,6 +23,7 @@ GATE_LABELS = {
     "G7_EVIDENCE_FULLY_DISCLOSED": "All examined records disclosed",
     "G8_PROVENANCE_LABELLED": "Synthetic content labelled",
     "G9_READ_ONLY": "Read-only",
+    "G10_AUTHORITY_PATH_AGREES": "Authority records and knowledge graph agree",
 }
 
 
@@ -91,6 +93,21 @@ def run_gates(bundle: EvidenceBundle, answer: OperatorAnswer, store, th: Thresho
         gate="G8_PROVENANCE_LABELLED", passed=not mislabelled,
         detail="every citation states whether its source is an ABB publication"
                if not mislabelled else f"unlabelled synthetic sources: {', '.join(mislabelled)}"))
+
+    disagree = []
+    for c in bundle.candidate_changes:
+        comm = c.communication
+        if not (comm.approver_person_id and comm.scope_id):
+            continue
+        records_say = c.verdict.authority_state is AuthorityState.VERIFIED
+        graph_says = c.authority_path is not None
+        if records_say != graph_says:
+            disagree.append(f"{comm.comm_id} (records: {c.verdict.authority_state.value}, "
+                            f"graph: {'path found' if graph_says else 'no path'})")
+    gates.append(GateResult(
+        gate="G10_AUTHORITY_PATH_AGREES", passed=not disagree,
+        detail=("authority records and knowledge graph agree for every approval examined"
+                if not disagree else "authority sources disagree: " + "; ".join(disagree))))
 
     gates.append(GateResult(
         gate="G9_READ_ONLY", passed=True, blocking=False,
